@@ -1,0 +1,41 @@
+# Core Web Framework
+streamlit==1.28.1
+
+# HTTP Requests & APIs
+requests==2.31.0
+aiohttp==3.9.1
+
+# Data Processing
+pandas==2.0.3
+numpy==1.24.3
+
+# Database & Storage
+sqlite3  # Built-in Python
+
+# PDF Report Generation
+fpdf2==2.7.5
+
+# Environment Configuration
+python-dotenv==1.0.0
+
+# Correlation Graphs
+networkx==3.2.1
+matplotlib==3.7.2
+
+# Logging & Console
+colorama==0.4.6
+
+# Security Algorithms
+hashlib  # Built-in Python
+regex==2023.10.3
+
+# Testing Framework
+pytest==7.4.3
+pytest-cov==4.1.0
+
+# Async Processing
+asyncio  # Built-in Python
+
+# Development Utilities
+black==23.10.1  # Code formatter
+isort==5.12.0   # Import sorter
