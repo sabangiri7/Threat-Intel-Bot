@@ -1,0 +1,7 @@
+ioc_value,ioc_type,source,timestamp
+192.168.1.1,IP,test,12/4/2024
+192.168.1.2,IP,test,12/4/2024
+malicious.com,DOMAIN,test,12/4/2024
+phishing-site.com,DOMAIN,test,12/4/2024
+https://evil.com/malware,URL,test,12/4/2024
+d41d8cd98f00b204e9800998ecf8427e,HASH,test,12/4/2024
