@@ -1,0 +1,19 @@
+# Ignore virtual environments
+.venv/
+venv/
+
+# Python caches
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# OS / IDE junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
