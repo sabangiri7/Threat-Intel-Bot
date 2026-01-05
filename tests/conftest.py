@@ -1,12 +1,26 @@
 """
 Pytest Configuration and Fixtures
 Mock API responses for Phase 2 enrichment testing
+
+Also ensures the project root is on ``sys.path`` so that imports like
+``from src.enrichment.enrichment import IOCEnricher`` work reliably when tests
+are run from different working directories.
 """
+
+import os
+import sys
+from pathlib import Path
 
 import pytest
 import json
 from unittest.mock import Mock, patch
 from datetime import datetime, timezone
+
+
+# Ensure project root is on sys.path for `import src` to succeed
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 
 # ============================================================================

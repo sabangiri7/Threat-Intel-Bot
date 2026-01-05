@@ -1,46 +1,107 @@
+"""Unit tests for Phase 2 IOC Enrichment Engine"""
+
 import pytest
+from src.enrichment.enrichment import IOCEnricher
 
-@pytest.mark.unit
-def test_virustotal_mock_shape(mock_virustotal_response):
-    """Test VirusTotal mock response structure."""
-    assert 'data' in mock_virustotal_response
-    assert 'attributes' in mock_virustotal_response['data']
-    stats = mock_virustotal_response['data']['attributes']['last_analysis_stats']
-    assert stats['malicious'] == 5
 
-@pytest.mark.api
-def test_otx_mock_has_pulses(mock_otx_response):
-    """Test OTX mock has pulse data."""
-    assert mock_otx_response['pulse_info']['count'] == 2
-    assert len(mock_otx_response['pulse_info']['pulses']) == 2
+class TestIOCEnricher:
+    """Test suite for IOCEnricher class"""
 
-@pytest.mark.api
-def test_threatfox_mock_response(mock_threatfox_response):
-    """Test ThreatFox mock response structure."""
-    assert mock_threatfox_response['query_status'] == 'ok'
-    assert mock_threatfox_response['data']['malware'] == 'Emotet'
-    assert mock_threatfox_response['data']['confidence_level'] == 100
+    @pytest.fixture
+    def enricher(self):
+        """Create enricher instance for each test"""
+        return IOCEnricher()
 
-@pytest.mark.api
-def test_abuseipdb_mock_abuse_score(mock_abuseipdb_response):
-    """Test AbuseIPDB mock abuse score."""
-    assert mock_abuseipdb_response['data']['abuseConfidenceScore'] == 75
-    assert mock_abuseipdb_response['data']['totalReports'] == 12
+    def test_enrich_ip_returns_valid_schema(self, enricher):
+        """Test enriching IP returns all required fields"""
+        result = enricher.enrich_ioc("8.8.8.8", "ip")
+        
+        required_fields = [
+            "ioc_value", "ioc_type", "unified_confidence",
+            "triage_action", "timestamp", "api_results"
+        ]
+        
+        for field in required_fields:
+            assert field in result, f"Missing field: {field}"
 
-@pytest.mark.unit
-def test_enriched_result_malicious(enriched_result_malicious):
-    """Test enriched malicious result."""
-    assert enriched_result_malicious['triage_action'] == 'BLOCK'
-    assert enriched_result_malicious['unified_confidence'] == 0.75
+    def test_confidence_always_in_valid_range(self, enricher):
+        """Confidence score must be [0.0, 1.0]"""
+        test_iocs = [
+            ("8.8.8.8", "ip"),
+            ("google.com", "domain"),
+            ("192.168.1.1", "ip"),
+        ]
+        
+        for ioc_value, ioc_type in test_iocs:
+            result = enricher.enrich_ioc(ioc_value, ioc_type)
+            conf = result["unified_confidence"]
+            assert 0.0 <= conf <= 1.0, f"Invalid confidence: {conf}"
 
-@pytest.mark.unit
-def test_enriched_result_clean(enriched_result_clean):
-    """Test enriched clean result."""
-    assert enriched_result_clean['triage_action'] == 'IGNORE'
-    assert enriched_result_clean['unified_confidence'] == 0.05
+    def test_triage_action_matches_confidence(self, enricher):
+        """Triage action must follow confidence thresholds"""
+        result = enricher.enrich_ioc("192.168.1.1", "ip")
+        
+        conf = result["unified_confidence"]
+        action = result["triage_action"]
+        
+        if conf >= 0.70:
+            assert action == "BLOCK", f"conf={conf} should be BLOCK, got {action}"
+        elif conf >= 0.30:
+            assert action == "MONITOR", f"conf={conf} should be MONITOR, got {action}"
+        else:
+            assert action == "IGNORE", f"conf={conf} should be IGNORE, got {action}"
 
-@pytest.mark.unit
-def test_sample_ioc_malicious(sample_ioc_malicious_ip):
-    """Test sample malicious IP IOC."""
-    assert sample_ioc_malicious_ip['ioc_type'] == 'IP'
-    assert '192.168.1.100' in sample_ioc_malicious_ip['ioc_value']
+    def test_batch_enrichment_returns_list(self, enricher):
+        """Batch enrichment should return list of enriched IOCs"""
+        iocs = [
+            {"ioc_value": "8.8.8.8", "ioc_type": "ip"},
+            {"ioc_value": "google.com", "ioc_type": "domain"},
+        ]
+        
+        results = enricher.enrich_batch(iocs)
+        
+        assert isinstance(results, list), "Batch should return list"
+        assert len(results) == len(iocs), "Output count should match input"
+
+    def test_batch_enrichment_preserves_ioc_identity(self, enricher):
+        """Each enriched IOC should preserve original value and type"""
+        iocs = [
+            {"ioc_value": "8.8.8.8", "ioc_type": "ip"},
+            {"ioc_value": "google.com", "ioc_type": "domain"},
+        ]
+        
+        results = enricher.enrich_batch(iocs)
+        
+        for original, enriched in zip(iocs, results):
+            assert enriched["ioc_value"] == original["ioc_value"]
+            assert enriched["ioc_type"] == original["ioc_type"]
+
+    def test_cache_stats_structure(self, enricher):
+        """Cache statistics should have required fields"""
+        stats = enricher.get_cache_stats()
+        
+        required = ["hits", "misses", "hit_rate", "current_size", "max_size"]
+        for field in required:
+            assert field in stats, f"Missing stats field: {field}"
+
+    def test_api_results_structure(self, enricher):
+        """API results should have entries for each handler"""
+        result = enricher.enrich_ioc("8.8.8.8", "ip")
+        
+        api_results = result["api_results"]
+        expected_sources = ["virustotal", "otx", "threatfox", "abuseipdb"]
+        
+        for source in expected_sources:
+            assert source in api_results, f"Missing source: {source}"
+            assert "status" in api_results[source], f"Missing status for {source}"
+
+    def test_error_handling_invalid_ioc_type(self, enricher):
+        """Error handling for invalid IOC types"""
+        # Test with invalid IOC type
+        result = enricher.enrich_ioc("8.8.8.8", "invalid_type")
+        
+        # Should still return a result, but may have errors in API results
+        assert "ioc_value" in result
+        assert "ioc_type" in result
+        # API handlers may return errors, but structure should be valid
+        assert "api_results" in result

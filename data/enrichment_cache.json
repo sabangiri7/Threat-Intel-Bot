@@ -1,6 +1,6 @@
 {
-  "ip::8.8.8.8": {
-    "value": {
+  "cache": {
+    "ip::8.8.8.8": {
       "ioc_value": "8.8.8.8",
       "ioc_type": "ip",
       "unified_confidence": 0.0,
@@ -12,7 +12,7 @@
           "detections": 0,
           "total_engines": 33,
           "detection_ratio": "0/33",
-          "last_analysis_date": 1767589146,
+          "last_analysis_date": 1767615152,
           "categories": {},
           "raw_data": {
             "data": {
@@ -22,15 +22,90 @@
                 "self": "https://www.virustotal.com/api/v3/ip_addresses/8.8.8.8"
               },
               "attributes": {
-                "last_analysis_stats": {
-                  "malicious": 0,
-                  "suspicious": 0,
-                  "undetected": 33,
-                  "harmless": 62,
-                  "timeout": 0
+                "last_https_certificate_date": 1767615152,
+                "last_modification_date": 1767618962,
+                "as_owner": "GOOGLE",
+                "total_votes": {
+                  "harmless": 254,
+                  "malicious": 53
                 },
-                "last_https_certificate_date": 1767589159,
+                "whois": "NetRange: 8.8.8.0 - 8.8.8.255\nCIDR: 8.8.8.0/24\nNetName: GOGL\nNetHandle: NET-8-8-8-0-2\nParent: NET8 (NET-8-0-0-0-0)\nNetType: Direct Allocation\nOriginAS: \nOrganization: Google LLC (GOGL)\nRegDate: 2023-12-28\nUpdated: 2023-12-28\nRef: https://rdap.arin.net/registry/ip/8.8.8.0\nOrgName: Google LLC\nOrgId: GOGL\nAddress: 1600 Amphitheatre Parkway\nCity: Mountain View\nStateProv: CA\nPostalCode: 94043\nCountry: US\nRegDate: 2000-03-30\nUpdated: 2019-10-31\nComment: Please note that the recommended way to file abuse complaints are located in the following links. \nComment: \nComment: To report abuse and illegal activity: https://www.google.com/contact/\nComment: \nComment: For legal requests: http://support.google.com/legal \nComment: \nComment: Regards, \nComment: The Google Team\nRef: https://rdap.arin.net/registry/entity/GOGL\nOrgAbuseHandle: ABUSE5250-ARIN\nOrgAbuseName: Abuse\nOrgAbusePhone: +1-650-253-0000 \nOrgAbuseEmail: network-abuse@google.com\nOrgAbuseRef: https://rdap.arin.net/registry/entity/ABUSE5250-ARIN\nOrgTechHandle: ZG39-ARIN\nOrgTechName: Google LLC\nOrgTechPhone: +1-650-253-0000 \nOrgTechEmail: arin-contact@google.com\nOrgTechRef: https://rdap.arin.net/registry/entity/ZG39-ARIN\n",
+                "asn": 15169,
                 "country": "US",
+                "reputation": 527,
+                "network": "8.8.8.0/24",
+                "whois_date": 1765230287,
+                "continent": "NA",
+                "last_analysis_date": 1767615152,
+                "last_https_certificate": {
+                  "cert_signature": {
+                    "signature_algorithm": "sha256RSA",
+                    "signature": "69abf55f93b2a00df9438db1f1af1a5763dadfde263f1f578dc5552b281903e1acab53833806adc43e4c5ae46295805881a08744cb4dd6f6ab0860e8ca04949b5eba8feaeb3d0eecf4776c54d952fc1afb41d5e24e36daa95ff740ac623b2b8762b892008713b0acaad593ea0c5cc3c89efa0563ab7dfe39d8fc72d3c87f0d26824b8d5453534cd675f65a36977c8f7a201f7185bfc97f20fd6f1eeb1d783d59ca7614a762056e6c71ce746109d4a40f0c42532d9f731290baba9475ae44e96ad68f1ee9961436e1417746e912835f1cd8802e0ee198c7df88fe86aa04172925c7784ba27cfc66dce22aac3dcc7f3c0fcb80563c4f71fe701b14349309ee6d8f"
+                  },
+                  "extensions": {
+                    "key_usage": [
+                      "digitalSignature",
+                      "keyEncipherment"
+                    ],
+                    "extended_key_usage": [
+                      "serverAuth"
+                    ],
+                    "CA": false,
+                    "subject_key_identifier": "76a2ef787528474fc30d5fc91694c30de7cc12f9",
+                    "authority_key_identifier": {
+                      "keyid": "de1b1eed7915d43e3724c321bbec34396d42b230"
+                    },
+                    "ca_information_access": {
+                      "OCSP": "http://o.pki.goog/wr2",
+                      "CA Issuers": "http://i.pki.goog/wr2.crt"
+                    },
+                    "subject_alternative_name": [
+                      "dns.google",
+                      "dns.google.com",
+                      "*.dns.google.com",
+                      "8888.google",
+                      "dns64.dns.google",
+                      "8.8.8.8",
+                      "8.8.4.4",
+                      "2001:4860:4860::8888",
+                      "2001:4860:4860::8844",
+                      "2001:4860:4860::6464",
+                      "2001:4860:4860::64"
+                    ],
+                    "certificate_policies": [
+                      "2.23.140.1.2.1"
+                    ],
+                    "crl_distribution_points": [
+                      "http://c.pki.goog/wr2/oBFYYahzgVI.crl"
+                    ],
+                    "1.3.6.1.4.1.11129.2.4.2": "0481f300f1007700969764bf555897adf743876837084277e9f03ad5f6a4f336"
+                  },
+                  "validity": {
+                    "not_after": "2026-02-25 15:57:25",
+                    "not_before": "2025-12-03 15:57:26"
+                  },
+                  "size": 1463,
+                  "version": "V3",
+                  "public_key": {
+                    "algorithm": "RSA",
+                    "rsa": {
+                      "modulus": "dc43d1c5739099f4332741d036e2ebe592a5caa5a867d68369e58646824d5cdcd6cc6aef0ecc83ebe45bac546dbabb626416578eece94041c42068bf65ca2e163f7b98d70c37d765364073beaf58e22a608078b7bba4dac387f6cfdd6587f8f408130b05c2f0eae226e4d8523a76c5d52c8d29dbb32bdde1ebe5f023e47f3281132ecd8afd2328331a0a35960ba59cde13b4a73788a78792164020d481fed199197899d9714a2c64ab9ba2cfd459fa9f7a74b2be649368dffd002831e7a478da8323f1f7d24dd86c29fbb276c84bbf3a2895209a6761da45075e1b25f2522f84cc64fb26c68d488ebd1b973234833c1471b5669d89a17ad465c333cc17051fab",
+                      "exponent": "10001",
+                      "key_size": 2048
+                    }
+                  },
+                  "thumbprint_sha256": "1ed53d432a90d3446d4f47857e4ba4ac415121710c064194adc6bdeeec403fd9",
+                  "thumbprint": "4c5a01b5b52682e780d96c54c758c538668461f5",
+                  "serial_number": "e00fd556c89bc8b60a46a49c45ffaa61",
+                  "issuer": {
+                    "C": "US",
+                    "O": "Google Trust Services",
+                    "CN": "WR2"
+                  },
+                  "subject": {
+                    "CN": "dns.google"
+                  }
+                },
                 "rdap": {
                   "object_class_name": "ip network",
                   "handle": "NET-8-8-8-0-2",
@@ -487,98 +562,22 @@
                   "arin_originas0_originautnums": [],
                   "remarks": []
                 },
-                "last_analysis_date": 1767589146,
                 "crowdsourced_context": [
                   {
-                    "details": "AsyncRAT botnet C2 server (confidence level: 100%)",
-                    "severity": "medium",
                     "timestamp": 1694383565,
+                    "details": "AsyncRAT botnet C2 server (confidence level: 100%)",
                     "title": "ThreatFox IOCs for 2023-09-10",
+                    "severity": "medium",
                     "source": "ArcSight Threat Intelligence"
                   }
                 ],
-                "asn": 15169,
-                "as_owner": "GOOGLE",
-                "tags": [],
-                "whois_date": 1765230287,
-                "last_modification_date": 1767602975,
-                "network": "8.8.8.0/24",
-                "total_votes": {
-                  "harmless": 254,
-                  "malicious": 53
+                "last_analysis_stats": {
+                  "malicious": 0,
+                  "suspicious": 0,
+                  "undetected": 33,
+                  "harmless": 62,
+                  "timeout": 0
                 },
-                "jarm": "29d3fd00029d29d00042d43d00041d8f924f5255cbc229bc55efa16391dad6",
-                "last_https_certificate": {
-                  "cert_signature": {
-                    "signature_algorithm": "sha256RSA",
-                    "signature": "69abf55f93b2a00df9438db1f1af1a5763dadfde263f1f578dc5552b281903e1acab53833806adc43e4c5ae46295805881a08744cb4dd6f6ab0860e8ca04949b5eba8feaeb3d0eecf4776c54d952fc1afb41d5e24e36daa95ff740ac623b2b8762b892008713b0acaad593ea0c5cc3c89efa0563ab7dfe39d8fc72d3c87f0d26824b8d5453534cd675f65a36977c8f7a201f7185bfc97f20fd6f1eeb1d783d59ca7614a762056e6c71ce746109d4a40f0c42532d9f731290baba9475ae44e96ad68f1ee9961436e1417746e912835f1cd8802e0ee198c7df88fe86aa04172925c7784ba27cfc66dce22aac3dcc7f3c0fcb80563c4f71fe701b14349309ee6d8f"
-                  },
-                  "extensions": {
-                    "key_usage": [
-                      "digitalSignature",
-                      "keyEncipherment"
-                    ],
-                    "extended_key_usage": [
-                      "serverAuth"
-                    ],
-                    "CA": false,
-                    "subject_key_identifier": "76a2ef787528474fc30d5fc91694c30de7cc12f9",
-                    "authority_key_identifier": {
-                      "keyid": "de1b1eed7915d43e3724c321bbec34396d42b230"
-                    },
-                    "ca_information_access": {
-                      "OCSP": "http://o.pki.goog/wr2",
-                      "CA Issuers": "http://i.pki.goog/wr2.crt"
-                    },
-                    "subject_alternative_name": [
-                      "dns.google",
-                      "dns.google.com",
-                      "*.dns.google.com",
-                      "8888.google",
-                      "dns64.dns.google",
-                      "8.8.8.8",
-                      "8.8.4.4",
-                      "2001:4860:4860::8888",
-                      "2001:4860:4860::8844",
-                      "2001:4860:4860::6464",
-                      "2001:4860:4860::64"
-                    ],
-                    "certificate_policies": [
-                      "2.23.140.1.2.1"
-                    ],
-                    "crl_distribution_points": [
-                      "http://c.pki.goog/wr2/oBFYYahzgVI.crl"
-                    ],
-                    "1.3.6.1.4.1.11129.2.4.2": "0481f300f1007700969764bf555897adf743876837084277e9f03ad5f6a4f336"
-                  },
-                  "validity": {
-                    "not_after": "2026-02-25 15:57:25",
-                    "not_before": "2025-12-03 15:57:26"
-                  },
-                  "size": 1463,
-                  "version": "V3",
-                  "public_key": {
-                    "algorithm": "RSA",
-                    "rsa": {
-                      "modulus": "dc43d1c5739099f4332741d036e2ebe592a5caa5a867d68369e58646824d5cdcd6cc6aef0ecc83ebe45bac546dbabb626416578eece94041c42068bf65ca2e163f7b98d70c37d765364073beaf58e22a608078b7bba4dac387f6cfdd6587f8f408130b05c2f0eae226e4d8523a76c5d52c8d29dbb32bdde1ebe5f023e47f3281132ecd8afd2328331a0a35960ba59cde13b4a73788a78792164020d481fed199197899d9714a2c64ab9ba2cfd459fa9f7a74b2be649368dffd002831e7a478da8323f1f7d24dd86c29fbb276c84bbf3a2895209a6761da45075e1b25f2522f84cc64fb26c68d488ebd1b973234833c1471b5669d89a17ad465c333cc17051fab",
-                      "exponent": "10001",
-                      "key_size": 2048
-                    }
-                  },
-                  "thumbprint_sha256": "1ed53d432a90d3446d4f47857e4ba4ac415121710c064194adc6bdeeec403fd9",
-                  "thumbprint": "4c5a01b5b52682e780d96c54c758c538668461f5",
-                  "serial_number": "e00fd556c89bc8b60a46a49c45ffaa61",
-                  "issuer": {
-                    "C": "US",
-                    "O": "Google Trust Services",
-                    "CN": "WR2"
-                  },
-                  "subject": {
-                    "CN": "dns.google"
-                  }
-                },
-                "whois": "NetRange: 8.8.8.0 - 8.8.8.255\nCIDR: 8.8.8.0/24\nNetName: GOGL\nNetHandle: NET-8-8-8-0-2\nParent: NET8 (NET-8-0-0-0-0)\nNetType: Direct Allocation\nOriginAS: \nOrganization: Google LLC (GOGL)\nRegDate: 2023-12-28\nUpdated: 2023-12-28\nRef: https://rdap.arin.net/registry/ip/8.8.8.0\nOrgName: Google LLC\nOrgId: GOGL\nAddress: 1600 Amphitheatre Parkway\nCity: Mountain View\nStateProv: CA\nPostalCode: 94043\nCountry: US\nRegDate: 2000-03-30\nUpdated: 2019-10-31\nComment: Please note that the recommended way to file abuse complaints are located in the following links. \nComment: \nComment: To report abuse and illegal activity: https://www.google.com/contact/\nComment: \nComment: For legal requests: http://support.google.com/legal \nComment: \nComment: Regards, \nComment: The Google Team\nRef: https://rdap.arin.net/registry/entity/GOGL\nOrgAbuseHandle: ABUSE5250-ARIN\nOrgAbuseName: Abuse\nOrgAbusePhone: +1-650-253-0000 \nOrgAbuseEmail: network-abuse@google.com\nOrgAbuseRef: https://rdap.arin.net/registry/entity/ABUSE5250-ARIN\nOrgTechHandle: ZG39-ARIN\nOrgTechName: Google LLC\nOrgTechPhone: +1-650-253-0000 \nOrgTechEmail: arin-contact@google.com\nOrgTechRef: https://rdap.arin.net/registry/entity/ZG39-ARIN\n",
-                "regional_internet_registry": "ARIN",
                 "last_analysis_results": {
                   "Acronis": {
                     "method": "blacklist",
@@ -1151,8 +1150,9 @@
                     "result": "unrated"
                   }
                 },
-                "reputation": 527,
-                "continent": "NA"
+                "tags": [],
+                "jarm": "29d3fd00029d29d00042d43d00041d8f924f5255cbc229bc55efa16391dad6",
+                "regional_internet_registry": "ARIN"
               }
             }
           },
@@ -2730,13 +2730,9 @@
           "source": "abuseipdb"
         }
       },
-      "timestamp": "2026-01-05T08:50:08.856102+00:00"
+      "timestamp": "2026-01-05T13:16:53.105189+00:00"
     },
-    "timestamp": 1767603008.856102,
-    "access_count": 1
-  },
-  "ip::192.168.1.1": {
-    "value": {
+    "ip::192.168.1.1": {
       "ioc_value": "192.168.1.1",
       "ioc_type": "ip",
       "unified_confidence": 0.0,
@@ -2746,9 +2742,9 @@
           "status": "success",
           "ioc_type": "IP",
           "detections": 0,
-          "total_engines": 34,
-          "detection_ratio": "0/34",
-          "last_analysis_date": 1767596452,
+          "total_engines": 33,
+          "detection_ratio": "0/33",
+          "last_analysis_date": 1767614416,
           "categories": {},
           "raw_data": {
             "data": {
@@ -2758,6 +2754,26 @@
                 "self": "https://www.virustotal.com/api/v3/ip_addresses/192.168.1.1"
               },
               "attributes": {
+                "last_modification_date": 1767614456,
+                "whois": "NetRange: 192.168.0.0 - 192.168.255.255\nCIDR: 192.168.0.0/16\nNetName: PRIVATE-ADDRESS-CBLK-RFC1918-IANA-RESERVED\nNetHandle: NET-192-168-0-0-1\nParent: NET192 (NET-192-0-0-0-0)\nNetType: IANA Special Use\nOriginAS: \nOrganization: Internet Assigned Numbers Authority (IANA)\nRegDate: 1994-03-15\nUpdated: 2013-08-30\nComment: These addresses are in use by many millions of independently operated networks, which might be as small as a single computer connected to a home gateway, and are automatically configured in hundreds of millions of devices. They are only intended for use within a private context and traffic that needs to cross the Internet will need to use a different, unique address.\r\nComment: \r\nComment: These addresses can be used by anyone without any need to coordinate with IANA or an Internet registry. The traffic from these addresses does not come from ICANN or IANA. We are not the source of activity you may see on logs or in e-mail records. Please refer to http://www.iana.org/abuse/answers\r\nComment: \r\nComment: These addresses were assigned by the IETF, the organization that develops Internet protocols, in the Best Current Practice document, RFC 1918 which can be found at:\r\nComment: http://datatracker.ietf.org/doc/rfc1918\nRef: https://rdap.arin.net/registry/ip/192.168.0.0\nOrgName: Internet Assigned Numbers Authority\nOrgId: IANA\nAddress: 12025 Waterfront Drive\r\nAddress: Suite 300\nCity: Los Angeles\nStateProv: CA\nPostalCode: 90292\nCountry: US\nRegDate: \nUpdated: 2012-08-31\nRef: https://rdap.arin.net/registry/entity/IANA\nOrgAbuseHandle: IANA-IP-ARIN\nOrgAbuseName: ICANN\nOrgAbusePhone: +1-310-301-5820 \nOrgAbuseEmail: abuse@iana.org\nOrgAbuseRef: https://rdap.arin.net/registry/entity/IANA-IP-ARIN\nOrgTechHandle: IANA-IP-ARIN\nOrgTechName: ICANN\nOrgTechPhone: +1-310-301-5820 \nOrgTechEmail: abuse@iana.org\nOrgTechRef: https://rdap.arin.net/registry/entity/IANA-IP-ARIN\n",
+                "last_analysis_date": 1767614416,
+                "last_analysis_stats": {
+                  "malicious": 0,
+                  "suspicious": 0,
+                  "undetected": 33,
+                  "harmless": 62,
+                  "timeout": 0
+                },
+                "total_votes": {
+                  "harmless": 68,
+                  "malicious": 19
+                },
+                "tags": [
+                  "suspicious-udp",
+                  "private"
+                ],
+                "whois_date": 1670447439,
+                "reputation": 49,
                 "last_analysis_results": {
                   "Acronis": {
                     "method": "blacklist",
@@ -2822,8 +2838,8 @@
                   "AlphaSOC": {
                     "method": "blacklist",
                     "engine_name": "AlphaSOC",
-                    "category": "undetected",
-                    "result": "unrated"
+                    "category": "harmless",
+                    "result": "clean"
                   },
                   "Antiy-AVL": {
                     "method": "blacklist",
@@ -3188,8 +3204,8 @@
                   "SOCRadar": {
                     "method": "blacklist",
                     "engine_name": "SOCRadar",
-                    "category": "undetected",
-                    "result": "unrated"
+                    "category": "harmless",
+                    "result": "clean"
                   },
                   "Sophos": {
                     "method": "blacklist",
@@ -3314,8 +3330,8 @@
                   "Xcitium Verdict Cloud": {
                     "method": "blacklist",
                     "engine_name": "Xcitium Verdict Cloud",
-                    "category": "harmless",
-                    "result": "clean"
+                    "category": "undetected",
+                    "result": "unrated"
                   },
                   "zvelo": {
                     "method": "blacklist",
@@ -3329,27 +3345,7 @@
                     "category": "undetected",
                     "result": "unrated"
                   }
-                },
-                "last_analysis_stats": {
-                  "malicious": 0,
-                  "suspicious": 0,
-                  "undetected": 34,
-                  "harmless": 61,
-                  "timeout": 0
-                },
-                "whois_date": 1670447439,
-                "reputation": 49,
-                "total_votes": {
-                  "harmless": 68,
-                  "malicious": 19
-                },
-                "whois": "NetRange: 192.168.0.0 - 192.168.255.255\nCIDR: 192.168.0.0/16\nNetName: PRIVATE-ADDRESS-CBLK-RFC1918-IANA-RESERVED\nNetHandle: NET-192-168-0-0-1\nParent: NET192 (NET-192-0-0-0-0)\nNetType: IANA Special Use\nOriginAS: \nOrganization: Internet Assigned Numbers Authority (IANA)\nRegDate: 1994-03-15\nUpdated: 2013-08-30\nComment: These addresses are in use by many millions of independently operated networks, which might be as small as a single computer connected to a home gateway, and are automatically configured in hundreds of millions of devices. They are only intended for use within a private context and traffic that needs to cross the Internet will need to use a different, unique address.\r\nComment: \r\nComment: These addresses can be used by anyone without any need to coordinate with IANA or an Internet registry. The traffic from these addresses does not come from ICANN or IANA. We are not the source of activity you may see on logs or in e-mail records. Please refer to http://www.iana.org/abuse/answers\r\nComment: \r\nComment: These addresses were assigned by the IETF, the organization that develops Internet protocols, in the Best Current Practice document, RFC 1918 which can be found at:\r\nComment: http://datatracker.ietf.org/doc/rfc1918\nRef: https://rdap.arin.net/registry/ip/192.168.0.0\nOrgName: Internet Assigned Numbers Authority\nOrgId: IANA\nAddress: 12025 Waterfront Drive\r\nAddress: Suite 300\nCity: Los Angeles\nStateProv: CA\nPostalCode: 90292\nCountry: US\nRegDate: \nUpdated: 2012-08-31\nRef: https://rdap.arin.net/registry/entity/IANA\nOrgAbuseHandle: IANA-IP-ARIN\nOrgAbuseName: ICANN\nOrgAbusePhone: +1-310-301-5820 \nOrgAbuseEmail: abuse@iana.org\nOrgAbuseRef: https://rdap.arin.net/registry/entity/IANA-IP-ARIN\nOrgTechHandle: IANA-IP-ARIN\nOrgTechName: ICANN\nOrgTechPhone: +1-310-301-5820 \nOrgTechEmail: abuse@iana.org\nOrgTechRef: https://rdap.arin.net/registry/entity/IANA-IP-ARIN\n",
-                "last_modification_date": 1767602209,
-                "last_analysis_date": 1767596452,
-                "tags": [
-                  "suspicious-udp",
-                  "private"
-                ]
+                }
               }
             }
           },
@@ -3544,13 +3540,9 @@
           "source": "abuseipdb"
         }
       },
-      "timestamp": "2026-01-05T08:50:34.447506+00:00"
+      "timestamp": "2026-01-05T13:17:16.459923+00:00"
     },
-    "timestamp": 1767603034.447506,
-    "access_count": 1
-  },
-  "domain::google.com": {
-    "value": {
+    "domain::google.com": {
       "ioc_value": "google.com",
       "ioc_type": "domain",
       "unified_confidence": 0.25,
@@ -3562,12 +3554,12 @@
           "detections": 1,
           "total_engines": 28,
           "detection_ratio": "1/28",
-          "last_analysis_date": 1767596405,
+          "last_analysis_date": 1767618010,
           "categories": {
-            "alphaMountain.ai": "Search Engines/Portals (alphaMountain.ai)",
-            "BitDefender": "portals",
-            "Sophos": "search engines",
-            "Forcepoint ThreatSeeker": "search engines and portals"
+            "alphaMountain.ai": "Forums, Personal Sites/Blogs (alphaMountain.ai)",
+            "BitDefender": "computersandsoftware",
+            "Sophos": "blogs and forums",
+            "Forcepoint ThreatSeeker": "message boards and forums"
           },
           "raw_data": {
             "data": {
@@ -3577,10 +3569,41 @@
                 "self": "https://www.virustotal.com/api/v3/domains/google.com"
               },
               "attributes": {
-                "last_dns_records_date": 1767596417,
-                "last_analysis_date": 1767596405,
-                "expiration_date": 1852516800,
-                "whois_date": 1764997260,
+                "categories": {
+                  "alphaMountain.ai": "Forums, Personal Sites/Blogs (alphaMountain.ai)",
+                  "BitDefender": "computersandsoftware",
+                  "Sophos": "blogs and forums",
+                  "Forcepoint ThreatSeeker": "message boards and forums"
+                },
+                "popularity_ranks": {
+                  "Majestic": {
+                    "rank": 1,
+                    "timestamp": 1767537491
+                  },
+                  "Statvoo": {
+                    "timestamp": 1684083481,
+                    "rank": 1
+                  },
+                  "Alexa": {
+                    "timestamp": 1684083480,
+                    "rank": 1
+                  },
+                  "Cisco Umbrella": {
+                    "rank": 1,
+                    "timestamp": 1767537489
+                  },
+                  "Quantcast": {
+                    "timestamp": 1585755370,
+                    "rank": 1
+                  },
+                  "Cloudflare Radar": {
+                    "rank": 1,
+                    "timestamp": 1767537497
+                  }
+                },
+                "jarm": "27d40d40d29d40d1dc42d43d00041ded961c16c68658e95145597cf992c36c",
+                "last_dns_records_date": 1767618021,
+                "registrar": "MarkMonitor Inc.",
                 "last_analysis_results": {
                   "Acronis": {
                     "method": "blacklist",
@@ -4153,170 +4176,8 @@
                     "result": "unrated"
                   }
                 },
-                "last_dns_records": [
-                  {
-                    "type": "TXT",
-                    "ttl": 3600,
-                    "value": "cisco-ci-domain-verification=47c38bc8c4b74b7233e9053220c1bbe76bcc1cd33c7acf7acd36cd6a5332004b"
-                  },
-                  {
-                    "type": "MX",
-                    "ttl": 178,
-                    "priority": 10,
-                    "value": "smtp.google.com"
-                  },
-                  {
-                    "type": "NS",
-                    "ttl": 21600,
-                    "value": "ns2.google.com"
-                  },
-                  {
-                    "type": "AAAA",
-                    "ttl": 300,
-                    "value": "2607:f8b0:4001:c70::71"
-                  },
-                  {
-                    "type": "TXT",
-                    "ttl": 3600,
-                    "value": "MS=E4A68B9AB2BB9670BCE15412F62916164C0B20BB"
-                  },
-                  {
-                    "type": "A",
-                    "ttl": 73,
-                    "value": "108.177.121.139"
-                  },
-                  {
-                    "type": "TXT",
-                    "ttl": 3600,
-                    "value": "v=spf1 include:_spf.google.com ~all"
-                  },
-                  {
-                    "type": "TXT",
-                    "ttl": 3600,
-                    "value": "google-site-verification=wD8N7i1JTNTkezJ49swvWW48f8_9xveREV4oB-0Hf5o"
-                  },
-                  {
-                    "type": "TXT",
-                    "ttl": 3600,
-                    "value": "google-site-verification=TV9-DBe4R80X4v0M4U_bd_J9cpOJM0nikft0jAgjmsQ"
-                  },
-                  {
-                    "type": "AAAA",
-                    "ttl": 300,
-                    "value": "2607:f8b0:4001:c70::8b"
-                  },
-                  {
-                    "type": "AAAA",
-                    "ttl": 300,
-                    "value": "2607:f8b0:4001:c70::64"
-                  },
-                  {
-                    "type": "A",
-                    "ttl": 73,
-                    "value": "108.177.121.113"
-                  },
-                  {
-                    "type": "A",
-                    "ttl": 73,
-                    "value": "108.177.121.101"
-                  },
-                  {
-                    "type": "NS",
-                    "ttl": 21600,
-                    "value": "ns3.google.com"
-                  },
-                  {
-                    "type": "AAAA",
-                    "ttl": 300,
-                    "value": "2607:f8b0:4001:c70::66"
-                  },
-                  {
-                    "type": "A",
-                    "ttl": 73,
-                    "value": "108.177.121.100"
-                  },
-                  {
-                    "type": "TXT",
-                    "ttl": 3600,
-                    "value": "apple-domain-verification=30afIBcvSuDV2PLX"
-                  },
-                  {
-                    "type": "NS",
-                    "ttl": 21600,
-                    "value": "ns4.google.com"
-                  },
-                  {
-                    "type": "NS",
-                    "ttl": 21600,
-                    "value": "ns1.google.com"
-                  },
-                  {
-                    "type": "TXT",
-                    "ttl": 3600,
-                    "value": "globalsign-smime-dv=CDYX+XFHUw2wml6/Gb8+59BsH31KzUr6c1l2BPvqKX8="
-                  },
-                  {
-                    "type": "TXT",
-                    "ttl": 3600,
-                    "value": "docusign=1b0a6754-49b1-4db5-8540-d2c12664b289"
-                  },
-                  {
-                    "type": "TXT",
-                    "ttl": 3600,
-                    "value": "google-site-verification=4ibFUgB-wXLQ_S7vsXVomSTVamuOXBiVAzpR5IZ87D0"
-                  },
-                  {
-                    "type": "TXT",
-                    "ttl": 3600,
-                    "value": "facebook-domain-verification=22rm551cu4k0ab0bxsw536tlds4h95"
-                  },
-                  {
-                    "type": "A",
-                    "ttl": 73,
-                    "value": "108.177.121.138"
-                  },
-                  {
-                    "type": "SOA",
-                    "ttl": 57,
-                    "value": "ns1.google.com",
-                    "rname": "dns-admin.google.com",
-                    "serial": 847693555,
-                    "refresh": 900,
-                    "retry": 900,
-                    "expire": 1800,
-                    "minimum": 60
-                  },
-                  {
-                    "type": "CAA",
-                    "ttl": 15023,
-                    "flag": 0,
-                    "tag": "issue",
-                    "value": "pki.goog"
-                  },
-                  {
-                    "type": "TXT",
-                    "ttl": 3600,
-                    "value": "onetrust-domain-verification=de01ed21f2fa4d8781cbc3ffb89cf4ef"
-                  },
-                  {
-                    "type": "TXT",
-                    "ttl": 3600,
-                    "value": "docusign=05958488-4752-4ef2-95eb-aa7ba8a3bd0e"
-                  },
-                  {
-                    "type": "A",
-                    "ttl": 73,
-                    "value": "108.177.121.102"
-                  }
-                ],
-                "categories": {
-                  "alphaMountain.ai": "Search Engines/Portals (alphaMountain.ai)",
-                  "BitDefender": "portals",
-                  "Sophos": "search engines",
-                  "Forcepoint ThreatSeeker": "search engines and portals"
-                },
-                "reputation": 666,
-                "last_modification_date": 1767603025,
+                "last_https_certificate_date": 1767618021,
+                "creation_date": 874306800,
                 "last_analysis_stats": {
                   "malicious": 1,
                   "suspicious": 0,
@@ -4324,204 +4185,6 @@
                   "harmless": 67,
                   "timeout": 0
                 },
-                "last_https_certificate_date": 1767596417,
-                "last_https_certificate": {
-                  "cert_signature": {
-                    "signature_algorithm": "sha256RSA",
-                    "signature": "79efbc31b30bfa5b537ee247bbf2ea6ec6735c9fc3f252a86b7fae8b19c9a0f07421983cc1103eadae148fbe0566a1fd27e6601e65709134db43403caa9e5864405d0912ee274fa6b143768d58cb3e219e029a4be5b379acdab9b043eeb169dd8f5d71a16cd02f20e1fc956ef20e0cebad0cbd9e0dc772ef84a662f2f67b30e06a6204e2443befdc43d086c604bc3936ce9dea65beaa92c0df37bba688861c7bd7fdb10ea1a400766e1c609ce42da82ab163fcbfe9b40830cf99cc74d750ef28b2180af23543c941ebdb6381a89e1a3fabb4b55acc82892a2bccae37c102ad7bfcf18c4bba9a94563a5252e64a23c82a483292e2324a008582fffb568a1e5c6f"
-                  },
-                  "extensions": {
-                    "key_usage": [
-                      "digitalSignature"
-                    ],
-                    "extended_key_usage": [
-                      "serverAuth"
-                    ],
-                    "CA": false,
-                    "subject_key_identifier": "fa3cf9706f6afa8b37e51eb8916e9e8c3e736d24",
-                    "authority_key_identifier": {
-                      "keyid": "de1b1eed7915d43e3724c321bbec34396d42b230"
-                    },
-                    "ca_information_access": {
-                      "OCSP": "http://o.pki.goog/wr2",
-                      "CA Issuers": "http://i.pki.goog/wr2.crt"
-                    },
-                    "subject_alternative_name": [
-                      "*.google.com",
-                      "*.appengine.google.com",
-                      "*.bdn.dev",
-                      "*.origin-test.bdn.dev",
-                      "*.cloud.google.com",
-                      "*.crowdsource.google.com",
-                      "*.datacompute.google.com",
-                      "*.google.ca",
-                      "*.google.cl",
-                      "*.google.co.in",
-                      "*.google.co.jp",
-                      "*.google.co.uk",
-                      "*.google.com.ar",
-                      "*.google.com.au",
-                      "*.google.com.br",
-                      "*.google.com.co",
-                      "*.google.com.mx",
-                      "*.google.com.tr",
-                      "*.google.com.vn",
-                      "*.google.de",
-                      "*.google.es",
-                      "*.google.fr",
-                      "*.google.hu",
-                      "*.google.it",
-                      "*.google.nl",
-                      "*.google.pl",
-                      "*.google.pt",
-                      "*.googleapis.cn",
-                      "*.googlevideo.com",
-                      "*.gstatic.cn",
-                      "*.gstatic-cn.com",
-                      "googlecnapps.cn",
-                      "*.googlecnapps.cn",
-                      "googleapps-cn.com",
-                      "*.googleapps-cn.com",
-                      "gkecnapps.cn",
-                      "*.gkecnapps.cn",
-                      "googledownloads.cn",
-                      "*.googledownloads.cn",
-                      "recaptcha.net.cn",
-                      "*.recaptcha.net.cn",
-                      "recaptcha-cn.net",
-                      "*.recaptcha-cn.net",
-                      "widevine.cn",
-                      "*.widevine.cn",
-                      "ampproject.org.cn",
-                      "*.ampproject.org.cn",
-                      "ampproject.net.cn",
-                      "*.ampproject.net.cn",
-                      "google-analytics-cn.com",
-                      "*.google-analytics-cn.com",
-                      "googleadservices-cn.com",
-                      "*.googleadservices-cn.com",
-                      "googlevads-cn.com",
-                      "*.googlevads-cn.com",
-                      "googleapis-cn.com",
-                      "*.googleapis-cn.com",
-                      "googleoptimize-cn.com",
-                      "*.googleoptimize-cn.com",
-                      "doubleclick-cn.net",
-                      "*.doubleclick-cn.net",
-                      "*.fls.doubleclick-cn.net",
-                      "*.g.doubleclick-cn.net",
-                      "doubleclick.cn",
-                      "*.doubleclick.cn",
-                      "*.fls.doubleclick.cn",
-                      "*.g.doubleclick.cn",
-                      "dartsearch-cn.net",
-                      "*.dartsearch-cn.net",
-                      "googletraveladservices-cn.com",
-                      "*.googletraveladservices-cn.com",
-                      "googletagservices-cn.com",
-                      "*.googletagservices-cn.com",
-                      "googletagmanager-cn.com",
-                      "*.googletagmanager-cn.com",
-                      "googlesyndication-cn.com",
-                      "*.googlesyndication-cn.com",
-                      "*.safeframe.googlesyndication-cn.com",
-                      "app-measurement-cn.com",
-                      "*.app-measurement-cn.com",
-                      "gvt1-cn.com",
-                      "*.gvt1-cn.com",
-                      "gvt2-cn.com",
-                      "*.gvt2-cn.com",
-                      "2mdn-cn.net",
-                      "*.2mdn-cn.net",
-                      "googleflights-cn.net",
-                      "*.googleflights-cn.net",
-                      "admob-cn.com",
-                      "*.admob-cn.com",
-                      "*.gemini.cloud.google.com",
-                      "googlesandbox-cn.com",
-                      "*.googlesandbox-cn.com",
-                      "*.safenup.googlesandbox-cn.com",
-                      "*.gstatic.com",
-                      "*.metric.gstatic.com",
-                      "*.gvt1.com",
-                      "*.gcpcdn.gvt1.com",
-                      "*.gvt2.com",
-                      "*.gcp.gvt2.com",
-                      "*.url.google.com",
-                      "*.youtube-nocookie.com",
-                      "*.ytimg.com",
-                      "ai.android",
-                      "android.com",
-                      "*.android.com",
-                      "*.flash.android.com",
-                      "g.cn",
-                      "*.g.cn",
-                      "g.co",
-                      "*.g.co",
-                      "goo.gl",
-                      "www.goo.gl",
-                      "google-analytics.com",
-                      "*.google-analytics.com",
-                      "google.com",
-                      "googlecommerce.com",
-                      "*.googlecommerce.com",
-                      "ggpht.cn",
-                      "*.ggpht.cn",
-                      "urchin.com",
-                      "*.urchin.com",
-                      "youtu.be",
-                      "youtube.com",
-                      "*.youtube.com",
-                      "music.youtube.com",
-                      "*.music.youtube.com",
-                      "youtubeeducation.com",
-                      "*.youtubeeducation.com",
-                      "youtubekids.com",
-                      "*.youtubekids.com",
-                      "yt.be",
-                      "*.yt.be",
-                      "android.clients.google.com",
-                      "*.android.google.cn",
-                      "*.chrome.google.cn",
-                      "*.developers.google.cn",
-                      "*.aistudio.google.com"
-                    ],
-                    "certificate_policies": [
-                      "2.23.140.1.2.1"
-                    ],
-                    "crl_distribution_points": [
-                      "http://c.pki.goog/wr2/oBFYYahzgVI.crl"
-                    ],
-                    "1.3.6.1.4.1.11129.2.4.2": "0481f300f1007700969764bf555897adf743876837084277e9f03ad5f6a4f336"
-                  },
-                  "validity": {
-                    "not_after": "2026-02-25 15:49:26",
-                    "not_before": "2025-12-03 15:49:27"
-                  },
-                  "size": 3661,
-                  "version": "V3",
-                  "public_key": {
-                    "algorithm": "EC",
-                    "ec": {
-                      "oid": "secp256r1",
-                      "pub": "3059301306072a8648ce3d020106082a8648ce3d030107034200045a3027508717e6cedc3bdb4fd2898d8b2038771f4d3b2c955e416fd99c371809860c76e1165cc685007c9134983f592ce35708b8fc91378ccc3cf4d03bc8f74b"
-                    }
-                  },
-                  "thumbprint_sha256": "0172d6c3fae57ef5ef15831feea5bf374c7802b4cdbf8def629f53b1b31ab6eb",
-                  "thumbprint": "4799fb9702c203a6b6600703d3b7374b99d17f1f",
-                  "serial_number": "56c74f44a4ce9b190ad981a4fc39c286",
-                  "issuer": {
-                    "C": "US",
-                    "O": "Google Trust Services",
-                    "CN": "WR2"
-                  },
-                  "subject": {
-                    "CN": "*.google.com"
-                  }
-                },
-                "registrar": "MarkMonitor Inc.",
-                "last_update_date": 1722565053,
-                "tld": "com",
                 "rdap": {
                   "handle": "2138514_DOMAIN_COM-VRSN",
                   "ldh_name": "google.com",
@@ -5086,39 +4749,368 @@
                   "nask0_state": "",
                   "variants": []
                 },
+                "tags": [],
+                "last_analysis_date": 1767618010,
                 "total_votes": {
                   "harmless": 475,
                   "malicious": 78
                 },
-                "creation_date": 874306800,
-                "tags": [],
-                "popularity_ranks": {
-                  "Majestic": {
-                    "rank": 1,
-                    "timestamp": 1767537491
+                "whois_date": 1764997260,
+                "last_modification_date": 1767618987,
+                "last_update_date": 1722565053,
+                "tld": "com",
+                "last_dns_records": [
+                  {
+                    "type": "MX",
+                    "ttl": 111,
+                    "priority": 10,
+                    "value": "smtp.google.com"
                   },
-                  "Statvoo": {
-                    "timestamp": 1684083481,
-                    "rank": 1
+                  {
+                    "type": "TXT",
+                    "ttl": 3600,
+                    "value": "globalsign-smime-dv=CDYX+XFHUw2wml6/Gb8+59BsH31KzUr6c1l2BPvqKX8="
                   },
-                  "Alexa": {
-                    "timestamp": 1684083480,
-                    "rank": 1
+                  {
+                    "type": "AAAA",
+                    "ttl": 184,
+                    "value": "2607:f8b0:4001:c00::8b"
                   },
-                  "Cisco Umbrella": {
-                    "rank": 1,
-                    "timestamp": 1767537489
+                  {
+                    "type": "NS",
+                    "ttl": 21600,
+                    "value": "ns4.google.com"
                   },
-                  "Quantcast": {
-                    "timestamp": 1585755370,
-                    "rank": 1
+                  {
+                    "type": "TXT",
+                    "ttl": 3600,
+                    "value": "apple-domain-verification=30afIBcvSuDV2PLX"
                   },
-                  "Cloudflare Radar": {
-                    "rank": 1,
-                    "timestamp": 1767537497
+                  {
+                    "type": "TXT",
+                    "ttl": 3600,
+                    "value": "google-site-verification=wD8N7i1JTNTkezJ49swvWW48f8_9xveREV4oB-0Hf5o"
+                  },
+                  {
+                    "type": "A",
+                    "ttl": 57,
+                    "value": "108.177.121.138"
+                  },
+                  {
+                    "type": "TXT",
+                    "ttl": 3600,
+                    "value": "google-site-verification=TV9-DBe4R80X4v0M4U_bd_J9cpOJM0nikft0jAgjmsQ"
+                  },
+                  {
+                    "type": "TXT",
+                    "ttl": 3600,
+                    "value": "facebook-domain-verification=22rm551cu4k0ab0bxsw536tlds4h95"
+                  },
+                  {
+                    "type": "TXT",
+                    "ttl": 3600,
+                    "value": "v=spf1 include:_spf.google.com ~all"
+                  },
+                  {
+                    "type": "TXT",
+                    "ttl": 3600,
+                    "value": "docusign=1b0a6754-49b1-4db5-8540-d2c12664b289"
+                  },
+                  {
+                    "type": "TXT",
+                    "ttl": 3600,
+                    "value": "google-site-verification=4ibFUgB-wXLQ_S7vsXVomSTVamuOXBiVAzpR5IZ87D0"
+                  },
+                  {
+                    "type": "A",
+                    "ttl": 57,
+                    "value": "108.177.121.100"
+                  },
+                  {
+                    "type": "CAA",
+                    "ttl": 10182,
+                    "flag": 0,
+                    "tag": "issue",
+                    "value": "pki.goog"
+                  },
+                  {
+                    "type": "TXT",
+                    "ttl": 3600,
+                    "value": "MS=E4A68B9AB2BB9670BCE15412F62916164C0B20BB"
+                  },
+                  {
+                    "type": "TXT",
+                    "ttl": 3600,
+                    "value": "cisco-ci-domain-verification=47c38bc8c4b74b7233e9053220c1bbe76bcc1cd33c7acf7acd36cd6a5332004b"
+                  },
+                  {
+                    "type": "NS",
+                    "ttl": 21600,
+                    "value": "ns2.google.com"
+                  },
+                  {
+                    "type": "A",
+                    "ttl": 57,
+                    "value": "108.177.121.101"
+                  },
+                  {
+                    "type": "AAAA",
+                    "ttl": 184,
+                    "value": "2607:f8b0:4001:c00::8a"
+                  },
+                  {
+                    "type": "AAAA",
+                    "ttl": 184,
+                    "value": "2607:f8b0:4001:c00::71"
+                  },
+                  {
+                    "type": "AAAA",
+                    "ttl": 184,
+                    "value": "2607:f8b0:4001:c00::64"
+                  },
+                  {
+                    "type": "A",
+                    "ttl": 57,
+                    "value": "108.177.121.102"
+                  },
+                  {
+                    "type": "SOA",
+                    "ttl": 16,
+                    "value": "ns1.google.com",
+                    "rname": "dns-admin.google.com",
+                    "serial": 847693555,
+                    "refresh": 900,
+                    "retry": 900,
+                    "expire": 1800,
+                    "minimum": 60
+                  },
+                  {
+                    "type": "A",
+                    "ttl": 57,
+                    "value": "108.177.121.113"
+                  },
+                  {
+                    "type": "TXT",
+                    "ttl": 3600,
+                    "value": "onetrust-domain-verification=de01ed21f2fa4d8781cbc3ffb89cf4ef"
+                  },
+                  {
+                    "type": "A",
+                    "ttl": 57,
+                    "value": "108.177.121.139"
+                  },
+                  {
+                    "type": "TXT",
+                    "ttl": 3600,
+                    "value": "docusign=05958488-4752-4ef2-95eb-aa7ba8a3bd0e"
+                  },
+                  {
+                    "type": "NS",
+                    "ttl": 21600,
+                    "value": "ns3.google.com"
+                  },
+                  {
+                    "type": "NS",
+                    "ttl": 21600,
+                    "value": "ns1.google.com"
+                  }
+                ],
+                "expiration_date": 1852516800,
+                "last_https_certificate": {
+                  "cert_signature": {
+                    "signature_algorithm": "sha256RSA",
+                    "signature": "79efbc31b30bfa5b537ee247bbf2ea6ec6735c9fc3f252a86b7fae8b19c9a0f07421983cc1103eadae148fbe0566a1fd27e6601e65709134db43403caa9e5864405d0912ee274fa6b143768d58cb3e219e029a4be5b379acdab9b043eeb169dd8f5d71a16cd02f20e1fc956ef20e0cebad0cbd9e0dc772ef84a662f2f67b30e06a6204e2443befdc43d086c604bc3936ce9dea65beaa92c0df37bba688861c7bd7fdb10ea1a400766e1c609ce42da82ab163fcbfe9b40830cf99cc74d750ef28b2180af23543c941ebdb6381a89e1a3fabb4b55acc82892a2bccae37c102ad7bfcf18c4bba9a94563a5252e64a23c82a483292e2324a008582fffb568a1e5c6f"
+                  },
+                  "extensions": {
+                    "key_usage": [
+                      "digitalSignature"
+                    ],
+                    "extended_key_usage": [
+                      "serverAuth"
+                    ],
+                    "CA": false,
+                    "subject_key_identifier": "fa3cf9706f6afa8b37e51eb8916e9e8c3e736d24",
+                    "authority_key_identifier": {
+                      "keyid": "de1b1eed7915d43e3724c321bbec34396d42b230"
+                    },
+                    "ca_information_access": {
+                      "OCSP": "http://o.pki.goog/wr2",
+                      "CA Issuers": "http://i.pki.goog/wr2.crt"
+                    },
+                    "subject_alternative_name": [
+                      "*.google.com",
+                      "*.appengine.google.com",
+                      "*.bdn.dev",
+                      "*.origin-test.bdn.dev",
+                      "*.cloud.google.com",
+                      "*.crowdsource.google.com",
+                      "*.datacompute.google.com",
+                      "*.google.ca",
+                      "*.google.cl",
+                      "*.google.co.in",
+                      "*.google.co.jp",
+                      "*.google.co.uk",
+                      "*.google.com.ar",
+                      "*.google.com.au",
+                      "*.google.com.br",
+                      "*.google.com.co",
+                      "*.google.com.mx",
+                      "*.google.com.tr",
+                      "*.google.com.vn",
+                      "*.google.de",
+                      "*.google.es",
+                      "*.google.fr",
+                      "*.google.hu",
+                      "*.google.it",
+                      "*.google.nl",
+                      "*.google.pl",
+                      "*.google.pt",
+                      "*.googleapis.cn",
+                      "*.googlevideo.com",
+                      "*.gstatic.cn",
+                      "*.gstatic-cn.com",
+                      "googlecnapps.cn",
+                      "*.googlecnapps.cn",
+                      "googleapps-cn.com",
+                      "*.googleapps-cn.com",
+                      "gkecnapps.cn",
+                      "*.gkecnapps.cn",
+                      "googledownloads.cn",
+                      "*.googledownloads.cn",
+                      "recaptcha.net.cn",
+                      "*.recaptcha.net.cn",
+                      "recaptcha-cn.net",
+                      "*.recaptcha-cn.net",
+                      "widevine.cn",
+                      "*.widevine.cn",
+                      "ampproject.org.cn",
+                      "*.ampproject.org.cn",
+                      "ampproject.net.cn",
+                      "*.ampproject.net.cn",
+                      "google-analytics-cn.com",
+                      "*.google-analytics-cn.com",
+                      "googleadservices-cn.com",
+                      "*.googleadservices-cn.com",
+                      "googlevads-cn.com",
+                      "*.googlevads-cn.com",
+                      "googleapis-cn.com",
+                      "*.googleapis-cn.com",
+                      "googleoptimize-cn.com",
+                      "*.googleoptimize-cn.com",
+                      "doubleclick-cn.net",
+                      "*.doubleclick-cn.net",
+                      "*.fls.doubleclick-cn.net",
+                      "*.g.doubleclick-cn.net",
+                      "doubleclick.cn",
+                      "*.doubleclick.cn",
+                      "*.fls.doubleclick.cn",
+                      "*.g.doubleclick.cn",
+                      "dartsearch-cn.net",
+                      "*.dartsearch-cn.net",
+                      "googletraveladservices-cn.com",
+                      "*.googletraveladservices-cn.com",
+                      "googletagservices-cn.com",
+                      "*.googletagservices-cn.com",
+                      "googletagmanager-cn.com",
+                      "*.googletagmanager-cn.com",
+                      "googlesyndication-cn.com",
+                      "*.googlesyndication-cn.com",
+                      "*.safeframe.googlesyndication-cn.com",
+                      "app-measurement-cn.com",
+                      "*.app-measurement-cn.com",
+                      "gvt1-cn.com",
+                      "*.gvt1-cn.com",
+                      "gvt2-cn.com",
+                      "*.gvt2-cn.com",
+                      "2mdn-cn.net",
+                      "*.2mdn-cn.net",
+                      "googleflights-cn.net",
+                      "*.googleflights-cn.net",
+                      "admob-cn.com",
+                      "*.admob-cn.com",
+                      "*.gemini.cloud.google.com",
+                      "googlesandbox-cn.com",
+                      "*.googlesandbox-cn.com",
+                      "*.safenup.googlesandbox-cn.com",
+                      "*.gstatic.com",
+                      "*.metric.gstatic.com",
+                      "*.gvt1.com",
+                      "*.gcpcdn.gvt1.com",
+                      "*.gvt2.com",
+                      "*.gcp.gvt2.com",
+                      "*.url.google.com",
+                      "*.youtube-nocookie.com",
+                      "*.ytimg.com",
+                      "ai.android",
+                      "android.com",
+                      "*.android.com",
+                      "*.flash.android.com",
+                      "g.cn",
+                      "*.g.cn",
+                      "g.co",
+                      "*.g.co",
+                      "goo.gl",
+                      "www.goo.gl",
+                      "google-analytics.com",
+                      "*.google-analytics.com",
+                      "google.com",
+                      "googlecommerce.com",
+                      "*.googlecommerce.com",
+                      "ggpht.cn",
+                      "*.ggpht.cn",
+                      "urchin.com",
+                      "*.urchin.com",
+                      "youtu.be",
+                      "youtube.com",
+                      "*.youtube.com",
+                      "music.youtube.com",
+                      "*.music.youtube.com",
+                      "youtubeeducation.com",
+                      "*.youtubeeducation.com",
+                      "youtubekids.com",
+                      "*.youtubekids.com",
+                      "yt.be",
+                      "*.yt.be",
+                      "android.clients.google.com",
+                      "*.android.google.cn",
+                      "*.chrome.google.cn",
+                      "*.developers.google.cn",
+                      "*.aistudio.google.com"
+                    ],
+                    "certificate_policies": [
+                      "2.23.140.1.2.1"
+                    ],
+                    "crl_distribution_points": [
+                      "http://c.pki.goog/wr2/oBFYYahzgVI.crl"
+                    ],
+                    "1.3.6.1.4.1.11129.2.4.2": "0481f300f1007700969764bf555897adf743876837084277e9f03ad5f6a4f336"
+                  },
+                  "validity": {
+                    "not_after": "2026-02-25 15:49:26",
+                    "not_before": "2025-12-03 15:49:27"
+                  },
+                  "size": 3661,
+                  "version": "V3",
+                  "public_key": {
+                    "algorithm": "EC",
+                    "ec": {
+                      "oid": "secp256r1",
+                      "pub": "3059301306072a8648ce3d020106082a8648ce3d030107034200045a3027508717e6cedc3bdb4fd2898d8b2038771f4d3b2c955e416fd99c371809860c76e1165cc685007c9134983f592ce35708b8fc91378ccc3cf4d03bc8f74b"
+                    }
+                  },
+                  "thumbprint_sha256": "0172d6c3fae57ef5ef15831feea5bf374c7802b4cdbf8def629f53b1b31ab6eb",
+                  "thumbprint": "4799fb9702c203a6b6600703d3b7374b99d17f1f",
+                  "serial_number": "56c74f44a4ce9b190ad981a4fc39c286",
+                  "issuer": {
+                    "C": "US",
+                    "O": "Google Trust Services",
+                    "CN": "WR2"
+                  },
+                  "subject": {
+                    "CN": "*.google.com"
                   }
                 },
-                "jarm": "27d40d40d29d40d1dc42d43d00041ded961c16c68658e95145597cf992c36c",
+                "reputation": 666,
                 "whois": "Creation Date: 1997-09-15T04:00:00Z\nCreation Date: 1997-09-15T07:00:00+0000\nDNSSEC: unsigned\nDomain Name: GOOGLE.COM\nDomain Name: google.com\nDomain Status: clientDeleteProhibited (https://www.icann.org/epp#clientDeleteProhibited)\nDomain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited\nDomain Status: clientTransferProhibited (https://www.icann.org/epp#clientTransferProhibited)\nDomain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited\nDomain Status: clientUpdateProhibited (https://www.icann.org/epp#clientUpdateProhibited)\nDomain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited\nDomain Status: serverDeleteProhibited (https://www.icann.org/epp#serverDeleteProhibited)\nDomain Status: serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited\nDomain Status: serverTransferProhibited (https://www.icann.org/epp#serverTransferProhibited)\nDomain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited\nDomain Status: serverUpdateProhibited (https://www.icann.org/epp#serverUpdateProhibited)\nDomain Status: serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited\nName Server: NS1.GOOGLE.COM\nName Server: NS2.GOOGLE.COM\nName Server: NS3.GOOGLE.COM\nName Server: NS4.GOOGLE.COM\nName Server: ns1.google.com\nName Server: ns2.google.com\nName Server: ns3.google.com\nName Server: ns4.google.com\nRegistrant Country: US\nRegistrant Email: ca4484b9e50182bds@\nRegistrant Organization: 3307059bbb3149c4\nRegistrar Abuse Contact Email: abusecomplaints@markmonitor.com\nRegistrar Abuse Contact Phone: +1.2086851750\nRegistrar IANA ID: 292\nRegistrar Registration Expiration Date: 2028-09-13T07:00:00+0000\nRegistrar URL: http://www.markmonitor.com\nRegistrar WHOIS Server: whois.markmonitor.com\nRegistrar: MarkMonitor Inc.\nRegistrar: MarkMonitor, Inc.\nRegistry Domain ID: 2138514_DOMAIN_COM-VRSN\nRegistry Expiry Date: 2028-09-14T04:00:00Z\nUpdated Date: 2019-09-09T15:39:04Z\nUpdated Date: 2024-08-02T02:17:33+0000"
               }
             }
@@ -5255,9 +5247,7 @@
           "source": "threatfox"
         }
       },
-      "timestamp": "2026-01-05T08:50:59.360614+00:00"
-    },
-    "timestamp": 1767603059.360614,
-    "access_count": 1
+      "timestamp": "2026-01-05T13:17:38.342947+00:00"
+    }
   }
 }

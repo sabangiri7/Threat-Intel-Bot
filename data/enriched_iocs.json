@@ -1,0 +1,1780 @@
+[
+  {
+    "ioc_value": "malware-c2-0.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.85,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-13T14:12:16.755346Z",
+    "malware_family": "Botnet.Y",
+    "resolves_to": [
+      "192.168.0.2"
+    ],
+    "otx_pulses": [
+      "pulse-005"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 22,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 68,
+        "total_reports": 396
+      },
+      "otx": {
+        "reputation": -61,
+        "indicator_count": 15
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-1.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.82,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-18T14:12:16.755346Z",
+    "malware_family": "Infostealer.Z",
+    "resolves_to": [
+      "192.168.0.7"
+    ],
+    "otx_pulses": [
+      "pulse-002"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 62,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 88,
+        "total_reports": 250
+      },
+      "otx": {
+        "reputation": -54,
+        "indicator_count": 3
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-2.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.61,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-06T14:12:16.755346Z",
+    "malware_family": "Botnet.Y",
+    "resolves_to": [
+      "192.168.0.9"
+    ],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 69,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 41,
+        "total_reports": 495
+      },
+      "otx": {
+        "reputation": -66,
+        "indicator_count": 18
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-3.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.98,
+    "triage_action": "BLOCK",
+    "timestamp": "2026-01-01T14:12:16.755346Z",
+    "malware_family": "Trojan.A",
+    "resolves_to": [
+      "192.168.0.9"
+    ],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 61,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 80,
+        "total_reports": 261
+      },
+      "otx": {
+        "reputation": -20,
+        "indicator_count": 3
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-4.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.86,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-08T14:12:16.755346Z",
+    "malware_family": "Infostealer.Z",
+    "resolves_to": [
+      "192.168.0.10"
+    ],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 56,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 90,
+        "total_reports": 250
+      },
+      "otx": {
+        "reputation": -100,
+        "indicator_count": 19
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-5.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.66,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-23T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [
+      "192.168.0.13"
+    ],
+    "otx_pulses": [
+      "pulse-002"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 20,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 86,
+        "total_reports": 171
+      },
+      "otx": {
+        "reputation": -49,
+        "indicator_count": 2
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-6.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.69,
+    "triage_action": "BLOCK",
+    "timestamp": "2025-12-14T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [
+      "192.168.0.9"
+    ],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 35,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 38,
+        "total_reports": 6
+      },
+      "otx": {
+        "reputation": -81,
+        "indicator_count": 7
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-7.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.6,
+    "triage_action": "BLOCK",
+    "timestamp": "2026-01-03T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [
+      "192.168.0.6"
+    ],
+    "otx_pulses": [
+      "pulse-004"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 65,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 79,
+        "total_reports": 215
+      },
+      "otx": {
+        "reputation": -57,
+        "indicator_count": 8
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-8.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.72,
+    "triage_action": "BLOCK",
+    "timestamp": "2026-01-04T14:12:16.755346Z",
+    "malware_family": "Trojan.A",
+    "resolves_to": [
+      "192.168.0.6"
+    ],
+    "otx_pulses": [
+      "pulse-007"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 53,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 96,
+        "total_reports": 464
+      },
+      "otx": {
+        "reputation": -70,
+        "indicator_count": 6
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-9.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.73,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-18T14:12:16.755346Z",
+    "malware_family": "Trojan.A",
+    "resolves_to": [
+      "192.168.0.5"
+    ],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 23,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 57,
+        "total_reports": 144
+      },
+      "otx": {
+        "reputation": -22,
+        "indicator_count": 6
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-10.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.68,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-09T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [
+      "192.168.0.8"
+    ],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 41,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 98,
+        "total_reports": 134
+      },
+      "otx": {
+        "reputation": -47,
+        "indicator_count": 13
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-11.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.75,
+    "triage_action": "IGNORE",
+    "timestamp": "2026-01-02T14:12:16.755346Z",
+    "malware_family": "Trojan.A",
+    "resolves_to": [
+      "192.168.0.10"
+    ],
+    "otx_pulses": [
+      "pulse-009"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 53,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 91,
+        "total_reports": 479
+      },
+      "otx": {
+        "reputation": -25,
+        "indicator_count": 14
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-12.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.88,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-29T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [
+      "192.168.0.10"
+    ],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 27,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 36,
+        "total_reports": 95
+      },
+      "otx": {
+        "reputation": -92,
+        "indicator_count": 10
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-13.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.64,
+    "triage_action": "MONITOR",
+    "timestamp": "2026-01-02T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [
+      "192.168.0.8"
+    ],
+    "otx_pulses": [
+      "pulse-001"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 39,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 66,
+        "total_reports": 158
+      },
+      "otx": {
+        "reputation": -94,
+        "indicator_count": 16
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "malware-c2-14.com",
+    "ioc_type": "DOMAIN",
+    "unified_confidence": 0.87,
+    "triage_action": "BLOCK",
+    "timestamp": "2026-01-05T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [
+      "192.168.0.10"
+    ],
+    "otx_pulses": [
+      "pulse-010"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 28,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 95,
+        "total_reports": 270
+      },
+      "otx": {
+        "reputation": -55,
+        "indicator_count": 4
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.0",
+    "ioc_type": "IP",
+    "unified_confidence": 0.75,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-26T14:12:16.755346Z",
+    "malware_family": "Infostealer.Z",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 64,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 68,
+        "total_reports": 250
+      },
+      "otx": {
+        "reputation": -67,
+        "indicator_count": 18
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.1",
+    "ioc_type": "IP",
+    "unified_confidence": 0.82,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-09T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 61,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 43,
+        "total_reports": 147
+      },
+      "otx": {
+        "reputation": -22,
+        "indicator_count": 8
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.2",
+    "ioc_type": "IP",
+    "unified_confidence": 0.69,
+    "triage_action": "BLOCK",
+    "timestamp": "2025-12-28T14:12:16.755346Z",
+    "malware_family": "Infostealer.Z",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 61,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 95,
+        "total_reports": 344
+      },
+      "otx": {
+        "reputation": -46,
+        "indicator_count": 14
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.3",
+    "ioc_type": "IP",
+    "unified_confidence": 0.74,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-14T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 42,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 70,
+        "total_reports": 13
+      },
+      "otx": {
+        "reputation": -57,
+        "indicator_count": 5
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.4",
+    "ioc_type": "IP",
+    "unified_confidence": 0.64,
+    "triage_action": "IGNORE",
+    "timestamp": "2026-01-03T14:12:16.755346Z",
+    "malware_family": "Trojan.A",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-008"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 59,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 34,
+        "total_reports": 28
+      },
+      "otx": {
+        "reputation": -98,
+        "indicator_count": 11
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.5",
+    "ioc_type": "IP",
+    "unified_confidence": 0.8,
+    "triage_action": "MONITOR",
+    "timestamp": "2026-01-02T14:12:16.755346Z",
+    "malware_family": "Infostealer.Z",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 61,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 98,
+        "total_reports": 19
+      },
+      "otx": {
+        "reputation": -72,
+        "indicator_count": 7
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.6",
+    "ioc_type": "IP",
+    "unified_confidence": 0.94,
+    "triage_action": "BLOCK",
+    "timestamp": "2025-12-17T14:12:16.755346Z",
+    "malware_family": "Trojan.A",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-008"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 65,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 58,
+        "total_reports": 493
+      },
+      "otx": {
+        "reputation": -60,
+        "indicator_count": 18
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.7",
+    "ioc_type": "IP",
+    "unified_confidence": 0.88,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-31T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-004"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 53,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 29,
+        "total_reports": 166
+      },
+      "otx": {
+        "reputation": -43,
+        "indicator_count": 14
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.8",
+    "ioc_type": "IP",
+    "unified_confidence": 0.83,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-09T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-007"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 64,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 44,
+        "total_reports": 188
+      },
+      "otx": {
+        "reputation": -43,
+        "indicator_count": 8
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.9",
+    "ioc_type": "IP",
+    "unified_confidence": 0.85,
+    "triage_action": "IGNORE",
+    "timestamp": "2026-01-02T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 27,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 78,
+        "total_reports": 312
+      },
+      "otx": {
+        "reputation": -84,
+        "indicator_count": 20
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.10",
+    "ioc_type": "IP",
+    "unified_confidence": 0.63,
+    "triage_action": "BLOCK",
+    "timestamp": "2026-01-02T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 66,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 91,
+        "total_reports": 329
+      },
+      "otx": {
+        "reputation": -38,
+        "indicator_count": 17
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.11",
+    "ioc_type": "IP",
+    "unified_confidence": 0.83,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-15T14:12:16.755346Z",
+    "malware_family": "Botnet.Y",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-010"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 50,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 20,
+        "total_reports": 13
+      },
+      "otx": {
+        "reputation": -63,
+        "indicator_count": 17
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.12",
+    "ioc_type": "IP",
+    "unified_confidence": 0.72,
+    "triage_action": "MONITOR",
+    "timestamp": "2026-01-01T14:12:16.755346Z",
+    "malware_family": "Trojan.A",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 16,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 34,
+        "total_reports": 409
+      },
+      "otx": {
+        "reputation": -32,
+        "indicator_count": 18
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.13",
+    "ioc_type": "IP",
+    "unified_confidence": 0.68,
+    "triage_action": "BLOCK",
+    "timestamp": "2025-12-29T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-002"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 51,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 88,
+        "total_reports": 443
+      },
+      "otx": {
+        "reputation": -77,
+        "indicator_count": 13
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "192.168.0.14",
+    "ioc_type": "IP",
+    "unified_confidence": 0.68,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-07T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-010"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 29,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 100,
+        "total_reports": 88
+      },
+      "otx": {
+        "reputation": -24,
+        "indicator_count": 2
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-0.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.93,
+    "triage_action": "BLOCK",
+    "timestamp": "2025-12-22T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 29,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 90,
+        "total_reports": 469
+      },
+      "otx": {
+        "reputation": -64,
+        "indicator_count": 18
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-1.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.92,
+    "triage_action": "BLOCK",
+    "timestamp": "2025-12-29T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-002"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 64,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 21,
+        "total_reports": 377
+      },
+      "otx": {
+        "reputation": -86,
+        "indicator_count": 20
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-2.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.67,
+    "triage_action": "BLOCK",
+    "timestamp": "2025-12-26T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-010"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 38,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 78,
+        "total_reports": 367
+      },
+      "otx": {
+        "reputation": -35,
+        "indicator_count": 15
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-3.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.69,
+    "triage_action": "MONITOR",
+    "timestamp": "2026-01-05T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-008"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 37,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 27,
+        "total_reports": 484
+      },
+      "otx": {
+        "reputation": -55,
+        "indicator_count": 3
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-4.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.98,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-22T14:12:16.755346Z",
+    "malware_family": "Infostealer.Z",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-009"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 51,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 62,
+        "total_reports": 458
+      },
+      "otx": {
+        "reputation": -76,
+        "indicator_count": 9
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-5.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.63,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-14T14:12:16.755346Z",
+    "malware_family": "Infostealer.Z",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-003"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 38,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 69,
+        "total_reports": 69
+      },
+      "otx": {
+        "reputation": -88,
+        "indicator_count": 13
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-6.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.71,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-24T14:12:16.755346Z",
+    "malware_family": "Botnet.Y",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-008"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 44,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 56,
+        "total_reports": 295
+      },
+      "otx": {
+        "reputation": -47,
+        "indicator_count": 18
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-7.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.77,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-22T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-007"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 34,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 91,
+        "total_reports": 11
+      },
+      "otx": {
+        "reputation": -30,
+        "indicator_count": 7
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-8.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.7,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-17T14:12:16.755346Z",
+    "malware_family": "Botnet.Y",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-005"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 47,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 39,
+        "total_reports": 162
+      },
+      "otx": {
+        "reputation": -46,
+        "indicator_count": 19
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-9.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.87,
+    "triage_action": "BLOCK",
+    "timestamp": "2026-01-02T14:12:16.755346Z",
+    "malware_family": "Trojan.A",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 44,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 66,
+        "total_reports": 51
+      },
+      "otx": {
+        "reputation": -58,
+        "indicator_count": 18
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-10.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.83,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-20T14:12:16.755346Z",
+    "malware_family": "Trojan.A",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 31,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 67,
+        "total_reports": 183
+      },
+      "otx": {
+        "reputation": -54,
+        "indicator_count": 9
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-11.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.87,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-11T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-007"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 17,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 56,
+        "total_reports": 8
+      },
+      "otx": {
+        "reputation": -28,
+        "indicator_count": 6
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-12.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.66,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-10T14:12:16.755346Z",
+    "malware_family": "Infostealer.Z",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-010"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 22,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 67,
+        "total_reports": 81
+      },
+      "otx": {
+        "reputation": -88,
+        "indicator_count": 18
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-13.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.78,
+    "triage_action": "IGNORE",
+    "timestamp": "2026-01-04T14:12:16.755346Z",
+    "malware_family": "Botnet.Y",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 39,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 94,
+        "total_reports": 53
+      },
+      "otx": {
+        "reputation": -93,
+        "indicator_count": 13
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "https://malware-14.ru/payload",
+    "ioc_type": "URL",
+    "unified_confidence": 0.83,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-24T14:12:16.755346Z",
+    "malware_family": "Trojan.A",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 26,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 25,
+        "total_reports": 461
+      },
+      "otx": {
+        "reputation": -50,
+        "indicator_count": 7
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.8,
+    "triage_action": "BLOCK",
+    "timestamp": "2025-12-10T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-010"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 26,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 26,
+        "total_reports": 248
+      },
+      "otx": {
+        "reputation": -47,
+        "indicator_count": 1
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "abbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.8,
+    "triage_action": "BLOCK",
+    "timestamp": "2025-12-18T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-005"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 68,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 64,
+        "total_reports": 418
+      },
+      "otx": {
+        "reputation": -87,
+        "indicator_count": 8
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "aabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.91,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-16T14:12:16.755346Z",
+    "malware_family": "Infostealer.Z",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 19,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 61,
+        "total_reports": 30
+      },
+      "otx": {
+        "reputation": -37,
+        "indicator_count": 18
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "aaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.73,
+    "triage_action": "MONITOR",
+    "timestamp": "2026-01-03T14:12:16.755346Z",
+    "malware_family": "Botnet.Y",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-002"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 21,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 70,
+        "total_reports": 81
+      },
+      "otx": {
+        "reputation": -25,
+        "indicator_count": 15
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "aaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.93,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-23T14:12:16.755346Z",
+    "malware_family": "Trojan.A",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 41,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 50,
+        "total_reports": 458
+      },
+      "otx": {
+        "reputation": -21,
+        "indicator_count": 9
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  },
+  {
+    "ioc_value": "aaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.94,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-29T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 69,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 61,
+        "total_reports": 264
+      },
+      "otx": {
+        "reputation": -54,
+        "indicator_count": 14
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "aaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.92,
+    "triage_action": "BLOCK",
+    "timestamp": "2025-12-29T14:12:16.755346Z",
+    "malware_family": "Botnet.Y",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 33,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 21,
+        "total_reports": 165
+      },
+      "otx": {
+        "reputation": -67,
+        "indicator_count": 19
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "aaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.64,
+    "triage_action": "IGNORE",
+    "timestamp": "2026-01-05T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-006"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 17,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 77,
+        "total_reports": 30
+      },
+      "otx": {
+        "reputation": -64,
+        "indicator_count": 17
+      },
+      "threatfox": {
+        "threat_type": "PUA"
+      }
+    }
+  },
+  {
+    "ioc_value": "aaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.78,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-24T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-003"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 27,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 98,
+        "total_reports": 331
+      },
+      "otx": {
+        "reputation": -65,
+        "indicator_count": 19
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "aaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.6,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-18T14:12:16.755346Z",
+    "malware_family": "Trojan.A",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 53,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 50,
+        "total_reports": 343
+      },
+      "otx": {
+        "reputation": -57,
+        "indicator_count": 13
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "aaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.97,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-20T14:12:16.755346Z",
+    "malware_family": "Infostealer.Z",
+    "resolves_to": [],
+    "otx_pulses": [],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 49,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 86,
+        "total_reports": 347
+      },
+      "otx": {
+        "reputation": -97,
+        "indicator_count": 4
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "aaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.76,
+    "triage_action": "MONITOR",
+    "timestamp": "2025-12-10T14:12:16.755346Z",
+    "malware_family": "Botnet.Y",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-008"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 28,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 82,
+        "total_reports": 405
+      },
+      "otx": {
+        "reputation": -79,
+        "indicator_count": 12
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "aaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.69,
+    "triage_action": "IGNORE",
+    "timestamp": "2025-12-16T14:12:16.755346Z",
+    "malware_family": "Infostealer.Z",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-003"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 31,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 53,
+        "total_reports": 445
+      },
+      "otx": {
+        "reputation": -76,
+        "indicator_count": 14
+      },
+      "threatfox": {
+        "threat_type": "Trojan"
+      }
+    }
+  },
+  {
+    "ioc_value": "aaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.66,
+    "triage_action": "BLOCK",
+    "timestamp": "2025-12-10T14:12:16.755346Z",
+    "malware_family": "Ransom.X",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-007"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 27,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 72,
+        "total_reports": 410
+      },
+      "otx": {
+        "reputation": -35,
+        "indicator_count": 17
+      },
+      "threatfox": {
+        "threat_type": "Malware"
+      }
+    }
+  },
+  {
+    "ioc_value": "aaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "ioc_type": "HASH",
+    "unified_confidence": 0.99,
+    "triage_action": "BLOCK",
+    "timestamp": "2025-12-11T14:12:16.755346Z",
+    "malware_family": "Worm.M",
+    "resolves_to": [],
+    "otx_pulses": [
+      "pulse-001"
+    ],
+    "api_results": {
+      "virustotal": {
+        "verdict": "malicious",
+        "detections": 60,
+        "scan_date": "2026-01-05T14:12:16.755346Z"
+      },
+      "abuseipdb": {
+        "abuse_confidence_score": 65,
+        "total_reports": 184
+      },
+      "otx": {
+        "reputation": -48,
+        "indicator_count": 12
+      },
+      "threatfox": {
+        "threat_type": "Ransomware"
+      }
+    }
+  }
+]

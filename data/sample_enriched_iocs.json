@@ -1,0 +1,351 @@
+{
+  "iocs": [
+    {
+      "ioc_value": "8.8.8.8",
+      "ioc_type": "ip",
+      "unified_confidence": 0.0,
+      "triage_action": "IGNORE",
+      "timestamp": "2025-01-01T10:00:00Z",
+      "api_results": {
+        "virustotal": {
+          "status": "success",
+          "ioc_type": "IP",
+          "detections": 0,
+          "total_engines": 70,
+          "detection_ratio": "0/70",
+          "last_analysis_date": 1735718400,
+          "categories": {
+            "Google": "search engine"
+          },
+          "raw_data": {}
+        },
+        "otx": {
+          "status": "success",
+          "ioc_type": "IP",
+          "pulse_count": 0,
+          "pulses": [],
+          "type_tags": [],
+          "validation": [],
+          "reputation": 0,
+          "raw_data": {}
+        },
+        "threatfox": {
+          "status": "not_found",
+          "ioc_count": 0,
+          "ioc_value": null,
+          "ioc_type": null,
+          "threat_type": null,
+          "threat_type_desc": null,
+          "malware": null,
+          "malware_printable": null,
+          "malware_alias": null,
+          "confidence_level": 0,
+          "last_submission": null,
+          "tags": [],
+          "raw_data": {}
+        },
+        "abuseipdb": {
+          "status": "success",
+          "ioc_type": "IP",
+          "ip_address": "8.8.8.8",
+          "abuse_confidence_score": 0,
+          "total_reports": 0,
+          "distinct_users": 0,
+          "last_reported_at": null,
+          "is_whitelisted": false,
+          "usage_type": "Data Center/Web Hosting/Transit",
+          "isp": "Google LLC",
+          "country": "United States",
+          "report_categories": [],
+          "raw_data": {}
+        }
+      }
+    },
+    {
+      "ioc_value": "malicious-c2.example.com",
+      "ioc_type": "domain",
+      "unified_confidence": 0.82,
+      "triage_action": "BLOCK",
+      "timestamp": "2025-01-01T10:05:00Z",
+      "api_results": {
+        "virustotal": {
+          "status": "success",
+          "ioc_type": "domain",
+          "detections": 15,
+          "total_engines": 70,
+          "detection_ratio": "15/70",
+          "last_analysis_date": 1735718400,
+          "categories": {
+            "Fortinet": "botnet C2",
+            "Kaspersky": "trojan"
+          },
+          "raw_data": {}
+        },
+        "otx": {
+          "status": "success",
+          "ioc_type": "domain",
+          "pulse_count": 6,
+          "pulses": [
+            "Emotet C2 Infrastructure",
+            "Financial Malware Campaign 2025"
+          ],
+          "type_tags": [
+            "malware",
+            "c2"
+          ],
+          "validation": [],
+          "reputation": -10,
+          "raw_data": {}
+        },
+        "threatfox": {
+          "status": "success",
+          "ioc_count": 1,
+          "ioc_value": "malicious-c2.example.com",
+          "ioc_type": "domain",
+          "threat_type": "botnet_cc",
+          "threat_type_desc": "Botnet Command & Control Server",
+          "malware": "Emotet",
+          "malware_printable": "Emotet",
+          "malware_alias": "Win32.Emotet",
+          "confidence_level": 95,
+          "last_submission": "2025-01-01T09:50:00Z",
+          "tags": [
+            "c2",
+            "banking-trojan"
+          ],
+          "raw_data": {}
+        },
+        "abuseipdb": {
+          "status": "error",
+          "ioc_type": "IP",
+          "ip_address": null,
+          "abuse_confidence_score": 0,
+          "total_reports": 0,
+          "distinct_users": 0,
+          "last_reported_at": null,
+          "is_whitelisted": false,
+          "usage_type": "Unknown",
+          "isp": "Unknown",
+          "country": "Unknown",
+          "report_categories": [],
+          "raw_data": {}
+        }
+      }
+    },
+    {
+      "ioc_value": "203.0.113.42",
+      "ioc_type": "ip",
+      "unified_confidence": 0.46,
+      "triage_action": "MONITOR",
+      "timestamp": "2025-01-01T10:10:00Z",
+      "api_results": {
+        "virustotal": {
+          "status": "success",
+          "ioc_type": "IP",
+          "detections": 2,
+          "total_engines": 70,
+          "detection_ratio": "2/70",
+          "last_analysis_date": 1735718400,
+          "categories": {
+            "Cisco Talos": "suspicious",
+            "Spamhaus": "spam source"
+          },
+          "raw_data": {}
+        },
+        "otx": {
+          "status": "success",
+          "ioc_type": "IP",
+          "pulse_count": 1,
+          "pulses": [
+            "SMTP Brute Force Infrastructure"
+          ],
+          "type_tags": [
+            "bruteforce",
+            "scanner"
+          ],
+          "validation": [],
+          "reputation": -2,
+          "raw_data": {}
+        },
+        "threatfox": {
+          "status": "not_found",
+          "ioc_count": 0,
+          "ioc_value": null,
+          "ioc_type": null,
+          "threat_type": null,
+          "threat_type_desc": null,
+          "malware": null,
+          "malware_printable": null,
+          "malware_alias": null,
+          "confidence_level": 0,
+          "last_submission": null,
+          "tags": [],
+          "raw_data": {}
+        },
+        "abuseipdb": {
+          "status": "success",
+          "ioc_type": "IP",
+          "ip_address": "203.0.113.42",
+          "abuse_confidence_score": 35,
+          "total_reports": 5,
+          "distinct_users": 3,
+          "last_reported_at": "2024-12-30T18:30:00Z",
+          "is_whitelisted": false,
+          "usage_type": "Residential",
+          "isp": "ExampleTel ISP",
+          "country": "Germany",
+          "report_categories": [
+            18,
+            22
+          ],
+          "raw_data": {}
+        }
+      }
+    },
+    {
+      "ioc_value": "login-secure.example.org",
+      "ioc_type": "domain",
+      "unified_confidence": 0.38,
+      "triage_action": "MONITOR",
+      "timestamp": "2025-01-01T10:15:00Z",
+      "api_results": {
+        "virustotal": {
+          "status": "success",
+          "ioc_type": "domain",
+          "detections": 3,
+          "total_engines": 70,
+          "detection_ratio": "3/70",
+          "last_analysis_date": 1735718400,
+          "categories": {
+            "ESET": "phishing",
+            "Bitdefender": "fraud"
+          },
+          "raw_data": {}
+        },
+        "otx": {
+          "status": "success",
+          "ioc_type": "domain",
+          "pulse_count": 2,
+          "pulses": [
+            "Credential Phishing 2025 Q1"
+          ],
+          "type_tags": [
+            "phishing"
+          ],
+          "validation": [],
+          "reputation": -3,
+          "raw_data": {}
+        },
+        "threatfox": {
+          "status": "success",
+          "ioc_count": 1,
+          "ioc_value": "login-secure.example.org",
+          "ioc_type": "domain",
+          "threat_type": "phishing",
+          "threat_type_desc": "Credential Phishing Site",
+          "malware": null,
+          "malware_printable": null,
+          "malware_alias": null,
+          "confidence_level": 70,
+          "last_submission": "2024-12-31T21:00:00Z",
+          "tags": [
+            "phishing",
+            "office365"
+          ],
+          "raw_data": {}
+        },
+        "abuseipdb": {
+          "status": "error",
+          "ioc_type": "IP",
+          "ip_address": null,
+          "abuse_confidence_score": 0,
+          "total_reports": 0,
+          "distinct_users": 0,
+          "last_reported_at": null,
+          "is_whitelisted": false,
+          "usage_type": "Unknown",
+          "isp": "Unknown",
+          "country": "Unknown",
+          "report_categories": [],
+          "raw_data": {}
+        }
+      }
+    },
+    {
+      "ioc_value": "198.51.100.13",
+      "ioc_type": "ip",
+      "unified_confidence": 0.91,
+      "triage_action": "BLOCK",
+      "timestamp": "2025-01-01T10:20:00Z",
+      "api_results": {
+        "virustotal": {
+          "status": "success",
+          "ioc_type": "IP",
+          "detections": 18,
+          "total_engines": 70,
+          "detection_ratio": "18/70",
+          "last_analysis_date": 1735718400,
+          "categories": {
+            "Fortinet": "ransomware distribution",
+            "CrowdStrike": "C2 infrastructure"
+          },
+          "raw_data": {}
+        },
+        "otx": {
+          "status": "success",
+          "ioc_type": "IP",
+          "pulse_count": 8,
+          "pulses": [
+            "Ransomware Campaign 2025-A",
+            "Cobalt Strike Beacons 2025"
+          ],
+          "type_tags": [
+            "ransomware",
+            "c2"
+          ],
+          "validation": [],
+          "reputation": -10,
+          "raw_data": {}
+        },
+        "threatfox": {
+          "status": "success",
+          "ioc_count": 1,
+          "ioc_value": "198.51.100.13",
+          "ioc_type": "ip:port",
+          "threat_type": "botnet_cc",
+          "threat_type_desc": "Botnet Command & Control Server",
+          "malware": "LockBit",
+          "malware_printable": "LockBit",
+          "malware_alias": "Ransom.Win32.LockBit",
+          "confidence_level": 100,
+          "last_submission": "2024-12-31T23:45:00Z",
+          "tags": [
+            "ransomware",
+            "c2"
+          ],
+          "raw_data": {}
+        },
+        "abuseipdb": {
+          "status": "success",
+          "ioc_type": "IP",
+          "ip_address": "198.51.100.13",
+          "abuse_confidence_score": 90,
+          "total_reports": 45,
+          "distinct_users": 20,
+          "last_reported_at": "2025-01-01T08:30:00Z",
+          "is_whitelisted": false,
+          "usage_type": "Dedicated Server",
+          "isp": "MaliciousHoster Ltd",
+          "country": "Netherlands",
+          "report_categories": [
+            18,
+            22,
+            21
+          ],
+          "raw_data": {}
+        }
+      }
+    }
+  ]
+}
+
