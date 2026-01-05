@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from dotenv import load_dotenv
 
+
 # ============================================================================
 # PATH HANDLING
 # ============================================================================
@@ -25,23 +26,35 @@ if str(src_dir) not in sys.path:
 env_file = project_root / ".env"
 load_dotenv(dotenv_path=env_file if env_file.exists() else None)
 
+
 # ============================================================================
 # IMPORTS
 # ============================================================================
 
 try:
-    from src.cache import get_cache
+    from cache import get_cache, save_cache, get_cache_stats
 except ImportError:
-    from cache import get_cache
+    try:
+        from src.cache import get_cache, save_cache, get_cache_stats
+    except ImportError as e:
+        print(f"❌ Fatal import error for cache: {e}")
+        sys.exit(1)
 
 try:
-    from src.api_handlers.virustotal_handler import VirusTotalHandler
-    from src.api_handlers.otx_handler import OTXHandler
-    from src.api_handlers.threatfox_handler import ThreatFoxHandler
-    from src.api_handlers.abuseipdb_handler import AbuseIPDBHandler
-except ImportError as e:
-    print(f"❌ Fatal import error: {e}")
-    sys.exit(1)
+    from api_handlers.virustotal_handler import VirusTotalHandler
+    from api_handlers.otx_handler import OTXHandler
+    from api_handlers.threatfox_handler import ThreatFoxHandler
+    from api_handlers.abuseipdb_handler import AbuseIPDBHandler
+except ImportError:
+    try:
+        from src.api_handlers.virustotal_handler import VirusTotalHandler
+        from src.api_handlers.otx_handler import OTXHandler
+        from src.api_handlers.threatfox_handler import ThreatFoxHandler
+        from src.api_handlers.abuseipdb_handler import AbuseIPDBHandler
+    except ImportError as e:
+        print(f"❌ Fatal import error for handlers: {e}")
+        sys.exit(1)
+
 
 # ============================================================================
 # LOGGING
@@ -53,10 +66,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
 # ============================================================================
 # IOC ENRICHER
 # ============================================================================
-
 
 class IOCEnricher:
     """
@@ -111,13 +124,13 @@ class IOCEnricher:
     def _compute_unified_confidence(self, api_results: Dict, ioc_type: str) -> float:
         """
         Compute confidence from actual API signals (NOT from per-handler 'confidence').
-        This fixes the 0.0 confidence issue in your cache.
+        This fixes the 0.0 confidence issue in cache.
         
         Scoring rules:
-        - VirusTotal: 0 detections=0%, 1-3=0.25, 3-10=0.45 (4-9), 10+=0.60
+        - VirusTotal: 0 detections=0%, 1-3=0.25, 4-9=0.45, 10+=0.60
         - OTX: 0=0%, 1=0.20, 5+=0.35
         - ThreatFox: If found in ThreatFox=+0.50
-        - AbuseIPDB (IP only): abuse_confidence_score (normalized 0-100 to 0.0-1.0) with whitelisting check
+        - AbuseIPDB (IP only): abuse_confidence_score (0-100) with whitelisting check
         """
         vt = api_results.get("virustotal", {}) or {}
         otx = api_results.get("otx", {}) or {}
@@ -137,9 +150,6 @@ class IOCEnricher:
                 score += 0.45
             elif detections >= 1:
                 score += 0.25
-            # 0 detections = 0% (no score added)
-            # Note: "1-3=0.25, 3-10=0.45, 10+=0.60" interpreted as:
-            # 1-3=0.25, 4-9=0.45, 10+=0.60 (resolving overlap by prioritizing 1-3 and 10+)
 
         # ---------------------------
         # OTX signals
@@ -150,7 +160,6 @@ class IOCEnricher:
                 score += 0.35
             elif pulse_count >= 1:
                 score += 0.20
-            # 0 pulses = 0% (no score added)
 
         # ---------------------------
         # ThreatFox signals
@@ -169,10 +178,6 @@ class IOCEnricher:
             else:
                 # Use abuse_confidence_score directly (0-100 scale, convert to 0.0-1.0)
                 abuse_score = int(ab.get("abuse_confidence_score", 0) or 0)
-                # AbuseIPDB score is already 0-100, add proportional contribution
-                # Since other scores are additive, we'll use the raw score as-is
-                # The user said "abuse_confidence_score with whitelisting check"
-                # We'll use the score value directly (0-100) normalized
                 if abuse_score > 0:
                     score += min(abuse_score / 100.0, 1.0)
 
@@ -185,15 +190,14 @@ class IOCEnricher:
         """
         Enrich a single IOC.
         """
-
         ioc_type = ioc_type.strip().lower()
         cache = get_cache()
         cache_key = f"{ioc_type}::{ioc_value.strip()}"
 
-        cached = cache.get(cache_key)
-        if cached:
+        # Check cache first
+        if cache_key in cache:
             logger.info(f"💾 Cache hit: {cache_key}")
-            return cached
+            return cache[cache_key]
 
         logger.info(f"🔍 Enriching IOC: {ioc_value} ({ioc_type})")
 
@@ -226,10 +230,10 @@ class IOCEnricher:
             "timestamp": datetime.now(timezone.utc).isoformat()
         }
 
-        cache.set(cache_key, enriched)
+        cache[cache_key] = enriched
 
         if random.random() < 0.1:
-            cache.save_to_disk()
+            save_cache()
 
         logger.info(
             f"✅ Enrichment complete: {ioc_value} "
@@ -268,14 +272,15 @@ class IOCEnricher:
                     "timestamp": datetime.now(timezone.utc).isoformat()
                 })
 
-        get_cache().save_to_disk()
+        save_cache()
         logger.info("✅ Batch enrichment complete")
         return results
 
     # ----------------------------------------------------------------------
 
     def get_cache_stats(self) -> Dict:
-        return get_cache().get_stats()
+        """Get cache statistics"""
+        return get_cache_stats()
 
 
 # ============================================================================
@@ -290,8 +295,8 @@ if __name__ == "__main__":
     enricher = IOCEnricher()
 
     sample_iocs = [
-        {"ioc_value": "8.8.8.8", "ioc_type": "IP"},
-        {"ioc_value": "192.168.1.1", "ioc_type": "IP"},
+        {"ioc_value": "8.8.8.8", "ioc_type": "ip"},
+        {"ioc_value": "192.168.1.1", "ioc_type": "ip"},
         {"ioc_value": "google.com", "ioc_type": "domain"},
     ]
 
