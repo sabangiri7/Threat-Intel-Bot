@@ -57,6 +57,7 @@ logger = logging.getLogger(__name__)
 # IOC ENRICHER
 # ============================================================================
 
+
 class IOCEnricher:
     """
     Orchestrates multi-source IOC enrichment with caching and triage.
@@ -85,7 +86,6 @@ class IOCEnricher:
             return {
                 "status": "error",
                 "source": source,
-                "confidence": 0.0,
                 "error": "check() not implemented"
             }
 
@@ -94,10 +94,8 @@ class IOCEnricher:
             if not isinstance(result, dict):
                 raise ValueError("Invalid response format")
 
-            result.setdefault("confidence", 0.0)
             result.setdefault("status", "success")
             result.setdefault("source", source)
-
             return result
 
         except Exception as e:
@@ -105,9 +103,81 @@ class IOCEnricher:
             return {
                 "status": "error",
                 "source": source,
-                "confidence": 0.0,
                 "error": str(e)
             }
+
+    # ----------------------------------------------------------------------
+
+    def _compute_unified_confidence(self, api_results: Dict, ioc_type: str) -> float:
+        """
+        Compute confidence from actual API signals (NOT from per-handler 'confidence').
+        This fixes the 0.0 confidence issue in your cache.
+        
+        Scoring rules:
+        - VirusTotal: 0 detections=0%, 1-3=0.25, 3-10=0.45 (4-9), 10+=0.60
+        - OTX: 0=0%, 1=0.20, 5+=0.35
+        - ThreatFox: If found in ThreatFox=+0.50
+        - AbuseIPDB (IP only): abuse_confidence_score (normalized 0-100 to 0.0-1.0) with whitelisting check
+        """
+        vt = api_results.get("virustotal", {}) or {}
+        otx = api_results.get("otx", {}) or {}
+        tf = api_results.get("threatfox", {}) or {}
+        ab = api_results.get("abuseipdb", {}) or {}
+
+        score = 0.0
+
+        # ---------------------------
+        # VirusTotal signals
+        # ---------------------------
+        if vt.get("status") == "success":
+            detections = int(vt.get("detections", 0) or 0)
+            if detections >= 10:
+                score += 0.60
+            elif detections >= 4:
+                score += 0.45
+            elif detections >= 1:
+                score += 0.25
+            # 0 detections = 0% (no score added)
+            # Note: "1-3=0.25, 3-10=0.45, 10+=0.60" interpreted as:
+            # 1-3=0.25, 4-9=0.45, 10+=0.60 (resolving overlap by prioritizing 1-3 and 10+)
+
+        # ---------------------------
+        # OTX signals
+        # ---------------------------
+        if otx.get("status") == "success":
+            pulse_count = int(otx.get("pulse_count", 0) or 0)
+            if pulse_count >= 5:
+                score += 0.35
+            elif pulse_count >= 1:
+                score += 0.20
+            # 0 pulses = 0% (no score added)
+
+        # ---------------------------
+        # ThreatFox signals
+        # ---------------------------
+        if tf.get("status") == "success":
+            # finding IOC in ThreatFox is a strong signal
+            score += 0.50
+
+        # ---------------------------
+        # AbuseIPDB signals (IP only)
+        # ---------------------------
+        if ioc_type == "ip" and ab.get("status") == "success":
+            # If whitelisted, do not treat reports as malicious
+            if ab.get("is_whitelisted") is True:
+                score += 0.0
+            else:
+                # Use abuse_confidence_score directly (0-100 scale, convert to 0.0-1.0)
+                abuse_score = int(ab.get("abuse_confidence_score", 0) or 0)
+                # AbuseIPDB score is already 0-100, add proportional contribution
+                # Since other scores are additive, we'll use the raw score as-is
+                # The user said "abuse_confidence_score with whitelisting check"
+                # We'll use the score value directly (0-100) normalized
+                if abuse_score > 0:
+                    score += min(abuse_score / 100.0, 1.0)
+
+        # Clamp final score to [0.0, 1.0]
+        return max(0.0, min(1.0, score))
 
     # ----------------------------------------------------------------------
 
@@ -133,24 +203,12 @@ class IOCEnricher:
             if source == "abuseipdb" and ioc_type != "ip":
                 continue
 
-            api_results[source] = self._safe_check(
-                handler, source, ioc_value, ioc_type
-            )
+            api_results[source] = self._safe_check(handler, source, ioc_value, ioc_type)
 
         # ------------------------------------------------------------------
-        # Aggregate confidence
+        # Aggregate confidence (FIXED)
         # ------------------------------------------------------------------
-
-        valid_scores = [
-            r["confidence"]
-            for r in api_results.values()
-            if r.get("status") == "success"
-        ]
-
-        unified_confidence = (
-            sum(valid_scores) / len(valid_scores)
-            if valid_scores else 0.0
-        )
+        unified_confidence = self._compute_unified_confidence(api_results, ioc_type)
 
         if unified_confidence >= 0.70:
             triage_action = "BLOCK"
@@ -186,7 +244,6 @@ class IOCEnricher:
         """
         Enrich multiple IOCs.
         """
-
         logger.info(f"📦 Starting batch enrichment: {len(iocs)} IOCs")
         results = []
 
@@ -213,7 +270,6 @@ class IOCEnricher:
 
         get_cache().save_to_disk()
         logger.info("✅ Batch enrichment complete")
-
         return results
 
     # ----------------------------------------------------------------------
@@ -221,12 +277,12 @@ class IOCEnricher:
     def get_cache_stats(self) -> Dict:
         return get_cache().get_stats()
 
+
 # ============================================================================
 # DEMO
 # ============================================================================
 
 if __name__ == "__main__":
-
     print("\n" + "=" * 70)
     print("IOC ENRICHMENT ENGINE - Demo")
     print("=" * 70 + "\n")
@@ -254,7 +310,6 @@ if __name__ == "__main__":
         else:
             print(f"  Confidence: {r['unified_confidence']:.2f}")
             print(f"  APIs queried: {len(r.get('api_results', {}))}")
-
         print()
 
     stats = enricher.get_cache_stats()

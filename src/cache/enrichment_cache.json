@@ -1,0 +1,129 @@
+{
+  "8.8.8.8_IP": {
+    "value": {
+      "ioc_value": "8.8.8.8",
+      "ioc_type": "IP",
+      "unified_confidence": 0.15,
+      "triage_action": "IGNORE",
+      "status": "success"
+    },
+    "timestamp": 1767419758.612889,
+    "access_count": 2
+  },
+  "google.com_domain": {
+    "value": {
+      "ioc_value": "google.com",
+      "ioc_type": "domain",
+      "unified_confidence": 0.05,
+      "triage_action": "IGNORE",
+      "status": "success"
+    },
+    "timestamp": 1767419758.612889,
+    "access_count": 1
+  },
+  "ip::8.8.8.8": {
+    "value": {
+      "ioc_value": "8.8.8.8",
+      "ioc_type": "ip",
+      "unified_confidence": 0.0,
+      "triage_action": "IGNORE",
+      "api_results": {
+        "virustotal": {
+          "status": "error",
+          "source": "virustotal",
+          "confidence": 0.0,
+          "error": "check() not implemented"
+        },
+        "otx": {
+          "status": "error",
+          "source": "otx",
+          "confidence": 0.0,
+          "error": "check() not implemented"
+        },
+        "threatfox": {
+          "status": "error",
+          "source": "threatfox",
+          "confidence": 0.0,
+          "error": "check() not implemented"
+        },
+        "abuseipdb": {
+          "status": "error",
+          "source": "abuseipdb",
+          "confidence": 0.0,
+          "error": "check() not implemented"
+        }
+      },
+      "timestamp": "2026-01-03T06:20:24.147607+00:00"
+    },
+    "timestamp": 1767421224.147607,
+    "access_count": 0
+  },
+  "ip::192.168.1.1": {
+    "value": {
+      "ioc_value": "192.168.1.1",
+      "ioc_type": "ip",
+      "unified_confidence": 0.0,
+      "triage_action": "IGNORE",
+      "api_results": {
+        "virustotal": {
+          "status": "error",
+          "source": "virustotal",
+          "confidence": 0.0,
+          "error": "check() not implemented"
+        },
+        "otx": {
+          "status": "error",
+          "source": "otx",
+          "confidence": 0.0,
+          "error": "check() not implemented"
+        },
+        "threatfox": {
+          "status": "error",
+          "source": "threatfox",
+          "confidence": 0.0,
+          "error": "check() not implemented"
+        },
+        "abuseipdb": {
+          "status": "error",
+          "source": "abuseipdb",
+          "confidence": 0.0,
+          "error": "check() not implemented"
+        }
+      },
+      "timestamp": "2026-01-03T06:20:24.147607+00:00"
+    },
+    "timestamp": 1767421224.147607,
+    "access_count": 0
+  },
+  "domain::google.com": {
+    "value": {
+      "ioc_value": "google.com",
+      "ioc_type": "domain",
+      "unified_confidence": 0.0,
+      "triage_action": "IGNORE",
+      "api_results": {
+        "virustotal": {
+          "status": "error",
+          "source": "virustotal",
+          "confidence": 0.0,
+          "error": "check() not implemented"
+        },
+        "otx": {
+          "status": "error",
+          "source": "otx",
+          "confidence": 0.0,
+          "error": "check() not implemented"
+        },
+        "threatfox": {
+          "status": "error",
+          "source": "threatfox",
+          "confidence": 0.0,
+          "error": "check() not implemented"
+        }
+      },
+      "timestamp": "2026-01-03T06:20:24.147607+00:00"
+    },
+    "timestamp": 1767421224.147607,
+    "access_count": 0
+  }
+}

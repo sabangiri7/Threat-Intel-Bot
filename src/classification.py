@@ -5,8 +5,7 @@ Classifies IOCs by type using regex patterns
 
 import re
 from typing import Dict, Tuple
-from config import IOC_TYPES
-
+from src.config import IOC_TYPES
 
 class IOCClassifier:
     """Classifies IOCs by type"""
