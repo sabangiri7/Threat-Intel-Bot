@@ -4,7 +4,7 @@ Classifies IOCs by type using regex patterns
 """
 
 import re
-from typing import Dict, Tuple
+from typing import Dict, Tuple, List
 from src.config import IOC_TYPES
 
 class IOCClassifier:
@@ -26,7 +26,7 @@ class IOCClassifier:
         
         return ("UNKNOWN", 0.0)
     
-    def classify_batch(self, iocs: list) -> list:
+    def classify_batch(self, iocs: List[Dict]) -> List[Dict]:
         """Classify multiple IOCs"""
         classified = []
         for ioc in iocs:
@@ -36,20 +36,3 @@ class IOCClassifier:
             classified.append(ioc)
         
         return classified
-
-
-# Example usage
-if __name__ == "__main__":
-    classifier = IOCClassifier()
-    
-    test_iocs = [
-        "192.168.1.1",
-        "malicious.com",
-        "https://phishing.com",
-        "d41d8cd98f00b204e9800998ecf8427e"
-    ]
-    
-    for ioc in test_iocs:
-        ioc_type, confidence = classifier.classify(ioc)
-        print(f"{ioc} -> {ioc_type} (confidence: {confidence})")
-    

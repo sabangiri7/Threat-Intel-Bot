@@ -119,6 +119,3 @@ class OTXHandler:
         return {"status": "error", "error": f"Unknown IOC type: {ioc_type}", "ioc_type": ioc_type}
 
 
-if __name__ == "__main__":
-    handler = OTXHandler()
-    print(handler.enrich_ioc("google.com", "domain"))

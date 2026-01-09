@@ -37,7 +37,7 @@ except ImportError:
     try:
         from src.cache import get_cache, save_cache, get_cache_stats
     except ImportError as e:
-        print(f"❌ Fatal import error for cache: {e}")
+        logger.error(f"Fatal import error for cache: {e}")
         sys.exit(1)
 
 try:
@@ -52,7 +52,7 @@ except ImportError:
         from src.api_handlers.threatfox_handler import ThreatFoxHandler
         from src.api_handlers.abuseipdb_handler import AbuseIPDBHandler
     except ImportError as e:
-        print(f"❌ Fatal import error for handlers: {e}")
+        logger.error(f"Fatal import error for handlers: {e}")
         sys.exit(1)
 
 
@@ -281,47 +281,3 @@ class IOCEnricher:
     def get_cache_stats(self) -> Dict:
         """Get cache statistics"""
         return get_cache_stats()
-
-
-# ============================================================================
-# DEMO
-# ============================================================================
-
-if __name__ == "__main__":
-    print("\n" + "=" * 70)
-    print("IOC ENRICHMENT ENGINE - Demo")
-    print("=" * 70 + "\n")
-
-    enricher = IOCEnricher()
-
-    sample_iocs = [
-        {"ioc_value": "8.8.8.8", "ioc_type": "ip"},
-        {"ioc_value": "192.168.1.1", "ioc_type": "ip"},
-        {"ioc_value": "google.com", "ioc_type": "domain"},
-    ]
-
-    results = enricher.enrich_batch(sample_iocs)
-
-    print("\n" + "=" * 70)
-    print("ENRICHMENT RESULTS")
-    print("=" * 70 + "\n")
-
-    for r in results:
-        print(f"IOC: {r['ioc_value']} ({r['ioc_type']})")
-        print(f"  Action: {r['triage_action']}")
-
-        if "error" in r:
-            print(f"  Error: {r['error']}")
-        else:
-            print(f"  Confidence: {r['unified_confidence']:.2f}")
-            print(f"  APIs queried: {len(r.get('api_results', {}))}")
-        print()
-
-    stats = enricher.get_cache_stats()
-    print("=" * 70)
-    print("CACHE STATISTICS")
-    print("=" * 70)
-    print(f"Size: {stats['current_size']}/{stats['max_size']}")
-    print(f"Hits: {stats['hits']} | Misses: {stats['misses']}")
-    print(f"Hit rate: {stats['hit_rate']:.1f}%")
-    print("=" * 70)

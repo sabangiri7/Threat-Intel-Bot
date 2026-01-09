@@ -5,6 +5,7 @@ Fetches IOCs from files, APIs, and simulated SIEM logs
 
 import csv
 import json
+import logging
 from typing import List, Dict
 from pathlib import Path
 
@@ -36,11 +37,11 @@ class IOCCollector:
                     iocs.append(ioc)
             
             self.iocs.extend(iocs)
-            print(f"[SUCCESS] Collected {len(iocs)} IOCs from {file_path}")
+            logging.info(f"Collected {len(iocs)} IOCs from {file_path}")
             return iocs
         
         except Exception as e:
-            print(f"[ERROR] Failed to read CSV file: {str(e)}")
+            logging.error(f"Failed to read CSV file: {str(e)}")
             return []
     
     def from_json_file(self, file_path: str) -> List[Dict]:
@@ -51,11 +52,11 @@ class IOCCollector:
             
             iocs = data if isinstance(data, list) else data.get('iocs', [])
             self.iocs.extend(iocs)
-            print(f"[SUCCESS] Collected {len(iocs)} IOCs from {file_path}")
+            logging.info(f"Collected {len(iocs)} IOCs from {file_path}")
             return iocs
         
         except Exception as e:
-            print(f"[ERROR] Failed to read JSON file: {str(e)}")
+            logging.error(f"Failed to read JSON file: {str(e)}")
             return []
     
     def add_manual(self, ioc_value: str, ioc_type: str, source: str = "manual") -> Dict:
@@ -79,16 +80,3 @@ class IOCCollector:
     def count(self) -> int:
         """Return total IOC count"""
         return len(self.iocs)
-
-
-# Example usage
-if __name__ == "__main__":
-    collector = IOCCollector()
-    
-    # Manually add test IOCs
-    collector.add_manual("192.168.1.1", "IP")
-    collector.add_manual("malicious.com", "DOMAIN")
-    collector.add_manual("https://phishing-site.com", "URL")
-    
-    print(f"Total IOCs: {collector.count()}")
-    print(collector.get_all())

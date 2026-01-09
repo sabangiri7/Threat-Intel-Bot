@@ -134,7 +134,3 @@ class AbuseIPDBHandler:
         return self.check_ip(ioc_value)
 
 
-if __name__ == "__main__":
-    handler = AbuseIPDBHandler()
-    result = handler.check_ip("8.8.8.8")
-    print(result)

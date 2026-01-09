@@ -89,8 +89,3 @@ class ThreatFoxHandler:
 
     def enrich_ioc(self, ioc_value: str, ioc_type: str = None) -> Dict:
         return self.check_ioc(ioc_value)
-
-
-if __name__ == "__main__":
-    handler = ThreatFoxHandler()
-    print(handler.check_ioc("google.com"))

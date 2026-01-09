@@ -5248,6 +5248,33 @@
         }
       },
       "timestamp": "2026-01-05T13:17:38.342947+00:00"
+    },
+    "invalid_type::8.8.8.8": {
+      "ioc_value": "8.8.8.8",
+      "ioc_type": "invalid_type",
+      "unified_confidence": 0.0,
+      "triage_action": "IGNORE",
+      "api_results": {
+        "virustotal": {
+          "status": "error",
+          "error": "Unknown IOC type: invalid_type",
+          "ioc_type": "invalid_type",
+          "source": "virustotal"
+        },
+        "otx": {
+          "status": "error",
+          "error": "Unknown IOC type: invalid_type",
+          "ioc_type": "invalid_type",
+          "source": "otx"
+        },
+        "threatfox": {
+          "status": "not_found",
+          "error": "no_result",
+          "ioc_value": "8.8.8.8",
+          "source": "threatfox"
+        }
+      },
+      "timestamp": "2026-01-06T00:40:19.561171+00:00"
     }
   }
 }

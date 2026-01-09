@@ -127,8 +127,3 @@ class VirusTotalHandler:
         if ioc_type_lower == "hash":
             return self.check_hash(ioc_value)
         return {"status": "error", "error": f"Unknown IOC type: {ioc_type}", "ioc_type": ioc_type}
-
-
-if __name__ == "__main__":
-    handler = VirusTotalHandler()
-    print(handler.enrich_ioc("google.com", "domain"))
