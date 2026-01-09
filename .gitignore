@@ -1,19 +1,35 @@
-# Ignore virtual environments
-.venv/
-venv/
-
-# Python caches
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+venv/
 .pytest_cache/
+.coverage
 
-# Environment / secrets
+# Data files - IGNORE
+*.txt
+*.csv
+*.pdf
+*.xlsx
+*.xls
+*.docx
+*.log
+
+# Secrets - IGNORE
 .env
 .env.local
-.env.*.local
+*.key
+*.pem
 
-# OS / IDE junk
-.DS_Store
-Thumbs.db
+# IDE
 .vscode/
 .idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Backups
+*.bak
+*.tmp
+*.backup
