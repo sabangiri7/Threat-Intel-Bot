@@ -55,12 +55,19 @@ class CorrelationScorer:
             'reasoning': reasoning
         }
     
+    def _get(self, ioc: Dict, *keys, default=None):
+        """Get first present key from IOC (supports multiple key names)."""
+        for k in keys:
+            if k in ioc and ioc[k] is not None:
+                return ioc[k]
+        return default
+
     def _calculate_base_score(self, cluster: List[Dict]) -> float:
         """Calculate base score from avg unified_confidence."""
         if not cluster:
             return 0.0
         
-        confidences = [ioc.get('unifiedconfidence', 0.5) for ioc in cluster]
+        confidences = [self._get(ioc, 'unifiedconfidence', 'unified_confidence', default=0.5) for ioc in cluster]
         avg_confidence = sum(confidences) / len(confidences)
         
         return avg_confidence * 80.0  # Scale to 0-80
@@ -70,7 +77,7 @@ class CorrelationScorer:
         boost = 0.0
         
         for ioc in cluster:
-            api_results = ioc.get('apiresults', {})
+            api_results = self._get(ioc, 'apiresults', 'api_results', default={}) or {}
             
             # VirusTotal detections
             vt = api_results.get('virustotal', {})
@@ -94,7 +101,7 @@ class CorrelationScorer:
         boost = 0.0
         
         for ioc in cluster:
-            api_results = ioc.get('apiresults', {})
+            api_results = self._get(ioc, 'apiresults', 'api_results', default={}) or {}
             source_count = len([k for k in api_results.keys() if api_results[k]])
             
             boost += source_count * 1.5
@@ -116,7 +123,7 @@ class CorrelationScorer:
     
     def _calculate_action_multiplier(self, cluster: List[Dict]) -> float:
         """Multiplier based on triage action."""
-        block_count = sum(1 for ioc in cluster if ioc.get('triageaction') == 'BLOCK')
+        block_count = sum(1 for ioc in cluster if self._get(ioc, 'triageaction', 'triage_action') == 'BLOCK')
         total = len(cluster)
         
         if block_count == total:
@@ -142,7 +149,7 @@ class CorrelationScorer:
     def _generate_reasoning(self, cluster: List[Dict], base: float, conf: float, src: float, size: float) -> str:
         """Generate human-readable reasoning."""
         count = len(cluster)
-        families = set(ioc.get('malwarefamily', 'UNKNOWN') for ioc in cluster if ioc.get('malwarefamily') != 'UNKNOWN')
+        families = set(self._get(ioc, 'malwarefamily', 'malware_family', default='UNKNOWN') for ioc in cluster if self._get(ioc, 'malwarefamily', 'malware_family', default='UNKNOWN') != 'UNKNOWN')
         
         parts = []
         

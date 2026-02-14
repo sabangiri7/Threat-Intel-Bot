@@ -2,22 +2,44 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
 venv/
+.venv/
+env/
+.env/
+
+# Testing / coverage
 .pytest_cache/
 .coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
 
-# Data files - IGNORE
-*.txt
-*.csv
+# Data / generated (keep sample data if you want; uncomment to ignore)
+# data/*.json
+# data/*.csv
+*.log
 *.pdf
 *.xlsx
 *.xls
 *.docx
-*.log
 
-# Secrets - IGNORE
+# Optional: ignore large dumps and generated reports
+fyp.txt
+enrichment.txt
+reports/*.json
+
+# Secrets – never commit
 .env
 .env.local
+.env.*.local
 *.key
 *.pem
 
@@ -26,6 +48,8 @@ venv/
 .idea/
 *.swp
 *~
+
+# OS
 .DS_Store
 Thumbs.db
 

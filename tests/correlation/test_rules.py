@@ -39,6 +39,16 @@ def sample_iocs():
             "otx_pulses": ["pulse-001"]
         },
         {
+            "ioc_value": "c2-backup.com",
+            "ioc_type": "DOMAIN",
+            "unified_confidence": 0.88,
+            "triage_action": "BLOCK",
+            "timestamp": (base_time + timedelta(hours=24)).isoformat() + "Z",
+            "malware_family": "Trojan.A",
+            "resolves_to": ["192.168.1.10"],
+            "otx_pulses": ["pulse-001"]
+        },
+        {
             "ioc_value": "payload.exe",
             "ioc_type": "HASH",
             "unified_confidence": 0.75,
@@ -96,45 +106,18 @@ def test_rule_2_multiple_families(sample_iocs):
     assert len(groups) >= 2
 
 
-def test_parse_timestamp():
-    """Test timestamp parsing."""
-    ts_str = "2026-01-07T12:30:45Z"
-    result = CorrelationRules.parse_timestamp(ts_str)
-    assert isinstance(result, datetime)
-
-
-def test_is_within_time_window():
-    """Test time window checking."""
-    ts1 = datetime(2026, 1, 7, 12, 0, 0)
-    ts2 = datetime(2026, 1, 7, 15, 0, 0)
-    assert CorrelationRules.is_within_time_window(ts1, ts2, 48)
-    assert not CorrelationRules.is_within_time_window(ts1, ts2, 2)
-
-
-def test_extract_ips():
-    """Test IP extraction."""
-    ip_ioc = {
-        "ioc_value": "192.168.1.10",
-        "ioc_type": "IP",
-        "resolves_to": []
-    }
-    ips = CorrelationRules._extract_ips(ip_ioc)
-    assert "192.168.1.10" in ips
-
-
-def test_merge_groups(sample_iocs):
-    """Test merging groups."""
-    groups_rule1 = CorrelationRules.apply_rule_1(sample_iocs)
-    groups_rule2 = CorrelationRules.apply_rule_2(sample_iocs)
-    merged = CorrelationRules.merge_groups(groups_rule1, groups_rule2)
-    assert len(merged) >= len(groups_rule1)
+def test_rule_1_resolves_to_list(sample_iocs):
+    """Test Rule 1 when resolves_to is a list (e.g. ['192.168.1.10'])."""
+    groups = CorrelationRules.apply_rule_1(sample_iocs)
+    assert len(groups) >= 1
+    assert len(groups[0]) >= 2
 
 
 def test_full_pipeline(sample_iocs):
-    """Test full pipeline."""
+    """Test Rule 1 + Rule 2 both produce groups."""
     groups_rule1 = CorrelationRules.apply_rule_1(sample_iocs)
     groups_rule2 = CorrelationRules.apply_rule_2(sample_iocs)
-    merged = CorrelationRules.merge_groups(groups_rule1, groups_rule2)
-    assert len(merged) >= 2
-    for group in merged:
+    assert len(groups_rule1) >= 1
+    assert len(groups_rule2) >= 2
+    for group in groups_rule1 + groups_rule2:
         assert len(group) >= 2

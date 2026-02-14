@@ -217,21 +217,35 @@ class CorrelationDemo:
         
         print(f"✓ Generated {len(incidents)} incident groups\n")
         
-        # Step 3: Display results
-        print("\n🎯 STEP 3: Incident Groups")
+        # Step 3: Incident-level recommendations (Phase 4 decision engine)
+        print("\n✅ STEP 3: Incident Recommendations")
+        print("-" * 80)
+        try:
+            from src.decision import TriageEngine, RecommendationSummary
+            engine = TriageEngine()
+            decisions = engine.batch_triage(incidents)
+            summary = RecommendationSummary.generate_summary(decisions)
+            self._print_recommendations(decisions, summary)
+        except Exception as e:
+            logger.warning(f"Decision engine skipped: {e}")
+            decisions = []
+            summary = {}
+        
+        # Step 4: Display incident groups
+        print("\n🎯 STEP 4: Incident Groups")
         print("-" * 80)
         
         for incident in incidents:
             self._print_incident(incident)
         
-        # Step 4: Summary statistics
-        print("\n📊 STEP 4: Summary Statistics")
+        # Step 5: Summary statistics
+        print("\n📊 STEP 5: Summary Statistics")
         print("-" * 80)
         self._print_summary(iocs, incidents)
         
-        # Step 5: Save results if requested
+        # Step 6: Save results if requested (incidents + recommendations for Phase 5/6)
         if output_file:
-            self._save_results(incidents, output_file)
+            self._save_results(incidents, output_file, decisions, summary)
         
         print("\n" + "="*80)
         print("✅ DEMO COMPLETE")
@@ -266,6 +280,19 @@ class CorrelationDemo:
             print()
     
     @staticmethod
+    def _print_recommendations(decisions, summary: Dict):
+        """Print incident recommendations and summary (Phase 4)."""
+        if not decisions:
+            print("  No recommendations (no incidents).")
+            return
+        print(f"  BLOCK: {summary.get('block_count', 0)}  |  QUARANTINE: {summary.get('quarantine_count', 0)}  |  MONITOR: {summary.get('monitor_count', 0)}  |  IGNORE: {summary.get('ignore_count', 0)}")
+        print(f"  ⚡ Immediate action required: {summary.get('immediate_action_required', 0)} incidents\n")
+        for d in decisions[:10]:
+            print(f"    {d.incident_id}: {d.recommendation} (confidence: {d.confidence:.1f}%)")
+        if len(decisions) > 10:
+            print(f"    ... and {len(decisions) - 10} more")
+
+    @staticmethod
     def _print_summary(iocs: List[Dict], incidents: List[Dict]):
         """Print summary statistics."""
         print(f"Total IOCs processed:        {len(iocs)}")
@@ -296,16 +323,19 @@ class CorrelationDemo:
                     print(f"    - {family}")
     
     @staticmethod
-    def _save_results(incidents: List[Dict], output_file: str):
-        """Save results to JSON file."""
+    def _save_results(incidents: List[Dict], output_file: str, decisions=None, summary: Dict = None):
+        """Save incidents and incident recommendations to JSON (artifacts for Phase 5/6)."""
         try:
             output_path = Path(output_file)
             output_path.parent.mkdir(parents=True, exist_ok=True)
-            
+            payload = {
+                "incidents": incidents,
+                "recommendation_summary": summary or {},
+                "decisions": [{"incident_id": d.incident_id, "recommendation": d.recommendation, "confidence": d.confidence, "reason": d.reason} for d in (decisions or [])],
+            }
             with open(output_path, 'w') as f:
-                json.dump(incidents, f, indent=2, default=str)
-            
-            print(f"\n✓ Results saved to: {output_file}")
+                json.dump(payload, f, indent=2, default=str)
+            print(f"\n✓ Results saved to: {output_file} (incidents + recommendations)")
         except Exception as e:
             logger.error(f"Failed to save results: {e}")
 

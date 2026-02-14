@@ -138,4 +138,12 @@ CIA Triad Compliance:
 ├── Availability: Rate limiting, caching layer
 └── STRIDE Threat Model: All threats mitigated
 
+## Running tests
+
+Activate the project virtual environment first, then run pytest:
+
+```powershell
+.\venv\Scripts\Activate.ps1
+python -m pytest -q
+```
 

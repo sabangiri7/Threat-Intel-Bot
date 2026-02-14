@@ -27,7 +27,7 @@ def test_virustotal_handler_normalize(mock_virustotal_response):
     from src.api_handlers.virustotal_handler import VirusTotalHandler
     
     handler = VirusTotalHandler()
-    normalized = handler.normalize_response(mock_virustotal_response, 'hash')
+    normalized = handler._normalize_response(mock_virustotal_response, 'hash')
     
     assert normalized['status'] == 'success'
     assert normalized['ioc_type'] == 'hash'
@@ -42,7 +42,7 @@ def test_otx_handler_normalize(mock_otx_response):
     from src.api_handlers.otx_handler import OTXHandler
     
     handler = OTXHandler()
-    normalized = handler.normalize_response(mock_otx_response, 'IP')
+    normalized = handler._normalize_response(mock_otx_response, 'IP')
     
     assert normalized['status'] == 'success'
     assert normalized['ioc_type'] == 'IP'
@@ -57,7 +57,7 @@ def test_otx_clean_response(mock_otx_clean_response):
     from src.api_handlers.otx_handler import OTXHandler
     
     handler = OTXHandler()
-    normalized = handler.normalize_response(mock_otx_clean_response, 'domain')
+    normalized = handler._normalize_response(mock_otx_clean_response, 'domain')
     
     assert normalized['status'] == 'success'
     assert normalized['pulse_count'] == 0
@@ -71,7 +71,7 @@ def test_threatfox_handler_normalize(mock_threatfox_response):
     from src.api_handlers.threatfox_handler import ThreatFoxHandler
     
     handler = ThreatFoxHandler()
-    normalized = handler.normalize_response(mock_threatfox_response)
+    normalized = handler._normalize_response(mock_threatfox_response)
     
     assert normalized['status'] == 'success'
     assert normalized['ioc_count'] == 1
@@ -86,7 +86,7 @@ def test_threatfox_not_found(mock_threatfox_not_found):
     from src.api_handlers.threatfox_handler import ThreatFoxHandler
     
     handler = ThreatFoxHandler()
-    normalized = handler.normalize_response(mock_threatfox_not_found)
+    normalized = handler._normalize_response(mock_threatfox_not_found)
     
     assert normalized['status'] == 'not_found' or normalized['ioc_count'] == 0
 
@@ -98,7 +98,7 @@ def test_abuseipdb_handler_normalize(mock_abuseipdb_response):
     from src.api_handlers.abuseipdb_handler import AbuseIPDBHandler
     
     handler = AbuseIPDBHandler()
-    normalized = handler.normalize_response(mock_abuseipdb_response)
+    normalized = handler._normalize_response(mock_abuseipdb_response)
     
     assert normalized['status'] == 'success'
     assert normalized['ioc_type'] == 'IP'
@@ -113,7 +113,7 @@ def test_abuseipdb_clean_ip(mock_abuseipdb_clean):
     from src.api_handlers.abuseipdb_handler import AbuseIPDBHandler
     
     handler = AbuseIPDBHandler()
-    normalized = handler.normalize_response(mock_abuseipdb_clean)
+    normalized = handler._normalize_response(mock_abuseipdb_clean)
     
     assert normalized['status'] == 'success'
     assert normalized['abuse_confidence_score'] == 0
