@@ -35,6 +35,9 @@ coverage.xml
 fyp.txt
 enrichment.txt
 reports/*.json
+reports/output/*.json
+reports/output/*.pdf
+reports/output/*.csv
 
 # Secrets – never commit
 .env

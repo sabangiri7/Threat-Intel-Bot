@@ -12,3 +12,10 @@ pytest>=7.0.0
 pytest-cov>=3.0.0
 pytest-mock>=3.6.0
 responses>=0.15.0
+
+# Phase 5 – Dashboard
+streamlit>=1.28.0
+plotly>=5.18.0
+
+# Phase 6 – Reports (PDF)
+reportlab>=4.0.0
