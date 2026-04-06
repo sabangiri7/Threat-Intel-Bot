@@ -1,62 +1,51 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.egg-info/
-*.egg
-dist/
-build/
-.eggs/
+# ==============================================================================
+# Automated Threat Intelligence Bot - Security & Environment Exclusions
+# ==============================================================================
 
-# Virtual environments
+# Environments
 venv/
 .venv/
 env/
-.env/
+env.bak/
+venv.bak/
 
-# Testing / coverage
+# Credentials & Secrets (CRITICAL)
+.env
+.env.*
+*.pem
+*.key
+output/auth_keys.json
+
+# Caches & Python Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
 .pytest_cache/
 .coverage
 htmlcov/
 .tox/
-nosetests.xml
-coverage.xml
 
-# Data / generated (keep sample data if you want; uncomment to ignore)
-# data/*.json
-# data/*.csv
-*.log
-*.pdf
-*.xlsx
-*.xls
-*.docx
-
-# Optional: ignore large dumps and generated reports
-fyp.txt
-enrichment.txt
-reports/*.json
-reports/output/*.json
-reports/output/*.pdf
-reports/output/*.csv
-
-# Secrets – never commit
-.env
-.env.local
-.env.*.local
-*.key
-*.pem
-
-# IDE
+# IDEs & Editor Artifacts
+.cursor/
 .vscode/
 .idea/
 *.swp
-*~
-
-# OS
+*.swo
 .DS_Store
-Thumbs.db
 
-# Backups
+# Output & Generated Logs (Keep sample files, ignore massive dynamic logs)
+output/
+intel.log
+logs/
+*.log
+!reports/VALIDATION.md
+
+# Temporary Dumps & Archives (Do not upload to repo)
+REPO_*.txt
+*.zip
+*.tar.gz
 *.bak
 *.tmp
-*.backup
+
+# Streamlit Artifacts
+.streamlit/

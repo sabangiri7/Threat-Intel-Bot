@@ -1,0 +1,175 @@
+{
+  "incidents": [
+    {
+      "incident_id": "INC-0001",
+      "group_size": 8,
+      "ioc_values": [
+        "malware-c2-0.com",
+        "malware-c2-1.com",
+        "malware-c2-2.com",
+        "malware-c2-3.com",
+        "malware-c2-4.com",
+        "192.168.1.10",
+        "192.168.1.11",
+        "192.168.1.12"
+      ],
+      "ioc_types": [
+        "IP",
+        "DOMAIN"
+      ],
+      "malware_families": [
+        "Trojan.A"
+      ],
+      "score": {
+        "base_score": 70.0,
+        "confidence_boost": 15.0,
+        "source_boost": 6.0,
+        "size_bonus": 8.0,
+        "action_multiplier": 1.0,
+        "final_score": 99.0,
+        "severity_level": "CRITICAL",
+        "reasoning": "Correlated 8 IOCs; Family: Trojan.A; High confidence sources detected; Large correlation group (x4.0 bonus)"
+      }
+    },
+    {
+      "incident_id": "INC-0002",
+      "group_size": 7,
+      "ioc_values": [
+        "ransomware-payload-0.ru",
+        "ransomware-payload-1.ru",
+        "ransomware-payload-2.ru",
+        "ransomware-payload-3.ru",
+        "d41d8cd98f00b204e9800998ecf8427e",
+        "e99a18c428cb38d5f260853678922e03",
+        "5d41402abc4b2a76b9719d911017c592"
+      ],
+      "ioc_types": [
+        "URL",
+        "HASH"
+      ],
+      "malware_families": [
+        "Ransom.X"
+      ],
+      "score": {
+        "base_score": 62.857142857142854,
+        "confidence_boost": 15.0,
+        "source_boost": 6.0,
+        "size_bonus": 8.0,
+        "action_multiplier": 1.0,
+        "final_score": 91.85714285714286,
+        "severity_level": "CRITICAL",
+        "reasoning": "Correlated 7 IOCs; Family: Ransom.X; High confidence sources detected; Large correlation group (x4.0 bonus)"
+      }
+    },
+    {
+      "incident_id": "INC-0003",
+      "group_size": 1,
+      "ioc_values": [
+        "8.8.8.8"
+      ],
+      "ioc_types": [
+        "IP"
+      ],
+      "malware_families": [
+        "UNKNOWN"
+      ],
+      "score": {
+        "base_score": 4.0,
+        "confidence_boost": 0.0,
+        "source_boost": 0.0,
+        "size_bonus": 0.0,
+        "action_multiplier": 0.75,
+        "final_score": 3.0,
+        "severity_level": "LOW",
+        "reasoning": "Standard correlation group"
+      }
+    },
+    {
+      "incident_id": "INC-0004",
+      "group_size": 1,
+      "ioc_values": [
+        "google.com"
+      ],
+      "ioc_types": [
+        "DOMAIN"
+      ],
+      "malware_families": [
+        "UNKNOWN"
+      ],
+      "score": {
+        "base_score": 8.0,
+        "confidence_boost": 0.0,
+        "source_boost": 0.0,
+        "size_bonus": 0.0,
+        "action_multiplier": 0.75,
+        "final_score": 6.0,
+        "severity_level": "LOW",
+        "reasoning": "Standard correlation group"
+      }
+    },
+    {
+      "incident_id": "INC-0005",
+      "group_size": 1,
+      "ioc_values": [
+        "cloudflare.com"
+      ],
+      "ioc_types": [
+        "DOMAIN"
+      ],
+      "malware_families": [
+        "UNKNOWN"
+      ],
+      "score": {
+        "base_score": 6.4,
+        "confidence_boost": 0.0,
+        "source_boost": 0.0,
+        "size_bonus": 0.0,
+        "action_multiplier": 0.75,
+        "final_score": 4.800000000000001,
+        "severity_level": "LOW",
+        "reasoning": "Standard correlation group"
+      }
+    }
+  ],
+  "recommendation_summary": {
+    "total_incidents": 5,
+    "block_count": 2,
+    "quarantine_count": 0,
+    "monitor_count": 0,
+    "ignore_count": 3,
+    "immediate_action_required": 2,
+    "analyst_review_recommended": 0
+  },
+  "decisions": [
+    {
+      "incident_id": "INC-0001",
+      "recommendation": "BLOCK",
+      "confidence": 89.6,
+      "reason": "Known malware family: Trojan.A | Severity: CRITICAL | Risk confidence: 89.6%"
+    },
+    {
+      "incident_id": "INC-0002",
+      "recommendation": "BLOCK",
+      "confidence": 86.74285714285715,
+      "reason": "Known malware family: Ransom.X | Severity: CRITICAL | Risk confidence: 86.7%"
+    },
+    {
+      "incident_id": "INC-0003",
+      "recommendation": "IGNORE",
+      "confidence": 8.2,
+      "reason": "Severity: LOW | Risk confidence: 8.2%"
+    },
+    {
+      "incident_id": "INC-0004",
+      "recommendation": "IGNORE",
+      "confidence": 9.4,
+      "reason": "Severity: LOW | Risk confidence: 9.4%"
+    },
+    {
+      "incident_id": "INC-0005",
+      "recommendation": "IGNORE",
+      "confidence": 8.92,
+      "reason": "Severity: LOW | Risk confidence: 8.9%"
+    }
+  ]
+}

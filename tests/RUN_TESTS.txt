@@ -1,0 +1,106 @@
+===============================================================================
+  THREAT-INTEL-BOT — Manual Test Commands
+  Run all commands from the project root: c:\Users\user\Desktop\Threat-Intel-Bot
+===============================================================================
+
+
+--- ENRICHMENT TEST --------------------------------------------------------
+
+  # Interactive (prompts for IOCs, type, sources)
+  python tests/manual_test_enrichment.py
+
+  # Mock mode (offline, no API keys needed)
+  python tests/manual_test_enrichment.py --mock
+
+  # Mock + save output to file
+  python tests/manual_test_enrichment.py --mock --save results_enrichment.json
+
+  # Mock + verbose debug logging
+  python tests/manual_test_enrichment.py --mock --verbose
+
+  # Mock + pick specific sources
+  python tests/manual_test_enrichment.py --mock --sources vt,otx
+
+  # Live APIs + save + verbose
+  python tests/manual_test_enrichment.py --save results_enrichment.json --verbose
+
+  # Live APIs + only VirusTotal and AbuseIPDB
+  python tests/manual_test_enrichment.py --sources vt,abuseipdb
+
+
+--- CORRELATION TEST -------------------------------------------------------
+
+  # Interactive (paste JSON or enter fields manually)
+  python tests/manual_test_correlation.py
+
+  # Mock mode (generates 5 sample enriched IOCs)
+  python tests/manual_test_correlation.py --mock
+
+  # Mock + save
+  python tests/manual_test_correlation.py --mock --save results_correlation.json
+
+  # Mock + verbose
+  python tests/manual_test_correlation.py --mock --verbose
+
+
+--- INTEGRATION TEST (end-to-end: enrichment -> correlation) ---------------
+
+  # Interactive with live APIs
+  python tests/manual_test_integration.py
+
+  # Mock mode (full pipeline offline)
+  python tests/manual_test_integration.py --mock
+
+  # Mock + save full report
+  python tests/manual_test_integration.py --mock --save report_integration.json
+
+  # Mock + verbose
+  python tests/manual_test_integration.py --mock --verbose
+
+  # Live APIs + save + verbose
+  python tests/manual_test_integration.py --save report_integration.json --verbose
+
+
+--- MENU-DRIVEN RUNNER (launches any of the above) -------------------------
+
+  # Interactive menu
+  python tests/manual_test_all.py
+
+  # Menu with --mock passed to whichever test you pick
+  python tests/manual_test_all.py --mock
+
+  # Menu with --mock + --verbose
+  python tests/manual_test_all.py --mock --verbose
+
+  # Menu with --mock + save
+  python tests/manual_test_all.py --mock --save results_all.json
+
+
+--- METRICS VERIFICATION (Slide 7: Cache, API success, Enrichment time) -----
+
+  # Live APIs: cache hit rate, API success rate, avg enrichment time
+  python scripts/verify_metrics.py
+
+  # Clear cache first, then run (forces real API calls for realistic metrics)
+  python scripts/verify_metrics.py --clear-cache
+
+  # Mock mode (offline)
+  python scripts/verify_metrics.py --mock
+
+  # Load from saved enrichment JSON (API success rate only)
+  python scripts/verify_metrics.py --load results_enrichment.json
+
+  # Save results and print all metrics
+  python scripts/verify_metrics.py --save reports/metrics_check.json
+
+
+===============================================================================
+  FLAGS REFERENCE
+===============================================================================
+
+  --mock       Use fake deterministic data (no API keys required)
+  --save FILE  Write JSON output to FILE
+  --verbose    Print debug-level logs
+  --sources X  (enrichment only) Comma-separated: vt,abuseipdb,otx,threatfox
+
+===============================================================================

@@ -1,0 +1,61 @@
+ioc_value,ioc_type,description
+192.0.2.15,ip,Cobalt Strike C2 Server
+198.51.100.42,ip,Cobalt Strike Team Server
+203.0.113.88,ip,Cobalt Strike Stager
+192.0.2.201,ip,Mirai Botnet Node
+198.51.100.101,ip,Mirai Scanner
+203.0.113.102,ip,Mirai C2
+185.199.108.10,ip,Emotet Epoch 4 Tier 1
+185.199.109.11,ip,Emotet Epoch 4 Tier 2
+185.199.110.12,ip,Emotet Payload Host
+203.0.113.200,ip,TrickBot Inject Server
+203.0.113.201,ip,TrickBot C2
+198.51.100.55,ip,QakBot Proxy
+198.51.100.56,ip,QakBot C2
+8.8.8.8,ip,Benign - Google DNS
+1.1.1.1,ip,Benign - Cloudflare DNS
+update.windows-services-host.com,domain,Cobalt Strike beacon domain
+cdn.telemetry-tracker.net,domain,Cobalt Strike C2 domain
+api.cloud-metrics-sync.org,domain,Cobalt Strike staging
+login.microsoft-auth-verify.com,domain,Cobalt Strike phishing
+invoice-document-download.com,domain,Emotet delivery
+payment-receipt-online.net,domain,Emotet delivery
+shipping-details-dhl.org,domain,Emotet delivery
+tax-statement-2026.com,domain,Emotet delivery
+hr-payroll-docs.net,domain,Emotet payload
+secure-bank-login-portal.com,domain,TrickBot target
+account-verify-update.org,domain,TrickBot inject
+sys-update-check.net,domain,TrickBot C2
+plugin-service-host.com,domain,TrickBot proxy
+mail-server-config.com,domain,AgentTesla exfil
+ftp-sync-host.net,domain,AgentTesla exfil
+smtp-relay-secure.org,domain,AgentTesla C2
+google.com,domain,Benign
+microsoft.com,domain,Benign
+github.com,domain,Benign
+apple.com,domain,Benign
+44d88612fea8a8f36de82e1278abb02f,hash,Formbook MD5
+55e99723gfb9b9g47ef93f2389bcc13g,hash,Formbook MD5
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,hash,Formbook SHA256
+8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92,hash,Formbook SHA256
+11a88612fea8a8f36de82e1278abb02f,hash,Remcos MD5
+22e99723gfb9b9g47ef93f2389bcc13g,hash,Remcos MD5
+33b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,hash,Remcos SHA256
+44969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92,hash,Remcos SHA256
+55a88612fea8a8f36de82e1278abb02f,hash,AgentTesla MD5
+66e99723gfb9b9g47ef93f2389bcc13g,hash,AgentTesla MD5
+77b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,hash,AgentTesla SHA256
+88a88612fea8a8f36de82e1278abb02f,hash,Mirai ARM ELF
+99e99723gfb9b9g47ef93f2389bcc13g,hash,Mirai x86 ELF
+d41d8cd98f00b204e9800998ecf8427e,hash,Benign empty file MD5
+0000000000000000000000000000000000000000000000000000000000000000,hash,Benign zero hash
+http://invoice-document-download.com/payload.exe,url,Emotet payload delivery
+https://payment-receipt-online.net/invoice.doc,url,Emotet document
+http://shipping-details-dhl.org/track.zip,url,Emotet zip
+http://198.51.100.55/config.bin,url,QakBot config
+https://198.51.100.56/update.dll,url,QakBot DLL
+http://198.51.100.55/auth.php,url,QakBot C2 panel
+https://update.windows-services-host.com/jquery-3.3.1.min.js,url,Cobalt Strike beacon
+http://192.0.2.15/submit.php?id=8842,url,Cobalt Strike C2
+https://www.google.com/search?q=cybersecurity,url,Benign URL
+https://github.com/about,url,Benign URL

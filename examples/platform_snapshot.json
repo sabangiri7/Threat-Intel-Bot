@@ -1,0 +1,605 @@
+{
+  "platform_version": "1.0.0",
+  "generated_at": "2026-03-11T07:43:29.198097+00:00",
+  "source_system": "FYP-ThreatIntelBot",
+  "summary": {
+    "total_iocs": 18,
+    "total_incidents": 14,
+    "critical_incidents": 1,
+    "high_incidents": 9,
+    "medium_incidents": 1,
+    "low_incidents": 3,
+    "campaigns_detected": 0,
+    "unique_malware_families": []
+  },
+  "iocs": [
+    {
+      "ioc_value": "malware-c2-0.com",
+      "ioc_type": "domain",
+      "unified_confidence": 85.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Trojan.A",
+      "resolves_to": "192.168.1.10",
+      "api_results": {
+        "virustotal": {
+          "malicious": 45,
+          "detections": 45
+        },
+        "otx": {
+          "pulsecount": 3
+        },
+        "threatfox": {
+          "confidencelevel": 95
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 80
+        }
+      },
+      "cached_at": "2026-01-07T12:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "malware-c2-1.com",
+      "ioc_type": "domain",
+      "unified_confidence": 87.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Trojan.A",
+      "resolves_to": "192.168.1.10",
+      "api_results": {
+        "virustotal": {
+          "malicious": 46,
+          "detections": 46
+        },
+        "otx": {
+          "pulsecount": 3
+        },
+        "threatfox": {
+          "confidencelevel": 95
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 80
+        }
+      },
+      "cached_at": "2026-01-07T13:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "malware-c2-2.com",
+      "ioc_type": "domain",
+      "unified_confidence": 89.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Trojan.A",
+      "resolves_to": "192.168.1.10",
+      "api_results": {
+        "virustotal": {
+          "malicious": 47,
+          "detections": 47
+        },
+        "otx": {
+          "pulsecount": 3
+        },
+        "threatfox": {
+          "confidencelevel": 95
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 80
+        }
+      },
+      "cached_at": "2026-01-07T14:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "malware-c2-3.com",
+      "ioc_type": "domain",
+      "unified_confidence": 91.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Trojan.A",
+      "resolves_to": "192.168.1.10",
+      "api_results": {
+        "virustotal": {
+          "malicious": 48,
+          "detections": 48
+        },
+        "otx": {
+          "pulsecount": 3
+        },
+        "threatfox": {
+          "confidencelevel": 95
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 80
+        }
+      },
+      "cached_at": "2026-01-07T15:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "malware-c2-4.com",
+      "ioc_type": "domain",
+      "unified_confidence": 93.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Trojan.A",
+      "resolves_to": "192.168.1.10",
+      "api_results": {
+        "virustotal": {
+          "malicious": 49,
+          "detections": 49
+        },
+        "otx": {
+          "pulsecount": 3
+        },
+        "threatfox": {
+          "confidencelevel": 95
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 80
+        }
+      },
+      "cached_at": "2026-01-07T16:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "192.168.1.10",
+      "ioc_type": "ip",
+      "unified_confidence": 82.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Trojan.A",
+      "resolves_to": "",
+      "api_results": {
+        "virustotal": {
+          "malicious": 50
+        },
+        "otx": {
+          "pulsecount": 2
+        },
+        "threatfox": {
+          "confidencelevel": 92
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 85
+        }
+      },
+      "cached_at": "2026-01-07T20:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "192.168.1.11",
+      "ioc_type": "ip",
+      "unified_confidence": 85.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Trojan.A",
+      "resolves_to": "",
+      "api_results": {
+        "virustotal": {
+          "malicious": 50
+        },
+        "otx": {
+          "pulsecount": 2
+        },
+        "threatfox": {
+          "confidencelevel": 92
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 85
+        }
+      },
+      "cached_at": "2026-01-07T21:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "192.168.1.12",
+      "ioc_type": "ip",
+      "unified_confidence": 88.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Trojan.A",
+      "resolves_to": "",
+      "api_results": {
+        "virustotal": {
+          "malicious": 50
+        },
+        "otx": {
+          "pulsecount": 2
+        },
+        "threatfox": {
+          "confidencelevel": 92
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 85
+        }
+      },
+      "cached_at": "2026-01-07T22:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "ransomware-payload-0.ru",
+      "ioc_type": "url",
+      "unified_confidence": 70.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Ransom.X",
+      "resolves_to": "192.168.2.50",
+      "api_results": {
+        "virustotal": {
+          "malicious": 55
+        },
+        "otx": {
+          "pulsecount": 4
+        },
+        "threatfox": {
+          "confidencelevel": 88
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 75
+        }
+      },
+      "cached_at": "2026-01-07T12:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "ransomware-payload-1.ru",
+      "ioc_type": "url",
+      "unified_confidence": 75.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Ransom.X",
+      "resolves_to": "192.168.2.51",
+      "api_results": {
+        "virustotal": {
+          "malicious": 55
+        },
+        "otx": {
+          "pulsecount": 4
+        },
+        "threatfox": {
+          "confidencelevel": 88
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 75
+        }
+      },
+      "cached_at": "2026-01-08T12:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "ransomware-payload-2.ru",
+      "ioc_type": "url",
+      "unified_confidence": 80.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Ransom.X",
+      "resolves_to": "192.168.2.52",
+      "api_results": {
+        "virustotal": {
+          "malicious": 55
+        },
+        "otx": {
+          "pulsecount": 4
+        },
+        "threatfox": {
+          "confidencelevel": 88
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 75
+        }
+      },
+      "cached_at": "2026-01-09T12:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "ransomware-payload-3.ru",
+      "ioc_type": "url",
+      "unified_confidence": 85.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Ransom.X",
+      "resolves_to": "192.168.2.53",
+      "api_results": {
+        "virustotal": {
+          "malicious": 55
+        },
+        "otx": {
+          "pulsecount": 4
+        },
+        "threatfox": {
+          "confidencelevel": 88
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 75
+        }
+      },
+      "cached_at": "2026-01-10T12:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "d41d8cd98f00b204e9800998ecf8427e",
+      "ioc_type": "hash",
+      "unified_confidence": 75.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Ransom.X",
+      "resolves_to": "",
+      "api_results": {
+        "virustotal": {
+          "malicious": 60
+        },
+        "otx": {
+          "pulsecount": 5
+        },
+        "threatfox": {
+          "confidencelevel": 90
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 0
+        }
+      },
+      "cached_at": "2026-01-07T12:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "e99a18c428cb38d5f260853678922e03",
+      "ioc_type": "hash",
+      "unified_confidence": 80.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Ransom.X",
+      "resolves_to": "",
+      "api_results": {
+        "virustotal": {
+          "malicious": 60
+        },
+        "otx": {
+          "pulsecount": 5
+        },
+        "threatfox": {
+          "confidencelevel": 90
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 0
+        }
+      },
+      "cached_at": "2026-01-08T12:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "5d41402abc4b2a76b9719d911017c592",
+      "ioc_type": "hash",
+      "unified_confidence": 85.0,
+      "triage_action": "BLOCK",
+      "malware_family": "Ransom.X",
+      "resolves_to": "",
+      "api_results": {
+        "virustotal": {
+          "malicious": 60
+        },
+        "otx": {
+          "pulsecount": 5
+        },
+        "threatfox": {
+          "confidencelevel": 90
+        },
+        "abuseipdb": {
+          "abuseconfidencescore": 0
+        }
+      },
+      "cached_at": "2026-01-09T12:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "8.8.8.8",
+      "ioc_type": "ip",
+      "unified_confidence": 5.0,
+      "triage_action": "IGNORE",
+      "malware_family": "UNKNOWN",
+      "resolves_to": "",
+      "api_results": {},
+      "cached_at": "2026-01-09T12:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "google.com",
+      "ioc_type": "domain",
+      "unified_confidence": 10.0,
+      "triage_action": "IGNORE",
+      "malware_family": "UNKNOWN",
+      "resolves_to": "",
+      "api_results": {},
+      "cached_at": "2026-01-09T12:00:00Z",
+      "stale": false
+    },
+    {
+      "ioc_value": "cloudflare.com",
+      "ioc_type": "domain",
+      "unified_confidence": 8.0,
+      "triage_action": "IGNORE",
+      "malware_family": "UNKNOWN",
+      "resolves_to": "",
+      "api_results": {},
+      "cached_at": "2026-01-09T12:00:00Z",
+      "stale": false
+    }
+  ],
+  "incidents": [
+    {
+      "incident_id": "INC-0001",
+      "severity": "CRITICAL",
+      "risk_score": 100.0,
+      "ioc_count": 5,
+      "ioc_values": [
+        "malware-c2-0.com",
+        "malware-c2-1.com",
+        "malware-c2-2.com",
+        "malware-c2-3.com",
+        "malware-c2-4.com"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [
+        "shared_infrastructure"
+      ],
+      "recommended_action": "Severity: CRITICAL | Risk confidence: 90.0%",
+      "reasoning": "Correlated 5 IOCs; High confidence sources detected; Large correlation group (x4.0 bonus)"
+    },
+    {
+      "incident_id": "INC-0002",
+      "severity": "HIGH",
+      "risk_score": 79.1,
+      "ioc_count": 1,
+      "ioc_values": [
+        "192.168.1.10"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: HIGH | Risk confidence: 70.9%",
+      "reasoning": "High confidence sources detected"
+    },
+    {
+      "incident_id": "INC-0003",
+      "severity": "HIGH",
+      "risk_score": 81.5,
+      "ioc_count": 1,
+      "ioc_values": [
+        "192.168.1.11"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: HIGH | Risk confidence: 71.8%",
+      "reasoning": "High confidence sources detected"
+    },
+    {
+      "incident_id": "INC-0004",
+      "severity": "HIGH",
+      "risk_score": 83.9,
+      "ioc_count": 1,
+      "ioc_values": [
+        "192.168.1.12"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: HIGH | Risk confidence: 72.8%",
+      "reasoning": "High confidence sources detected"
+    },
+    {
+      "incident_id": "INC-0005",
+      "severity": "MEDIUM",
+      "risk_score": 67.0,
+      "ioc_count": 1,
+      "ioc_values": [
+        "ransomware-payload-0.ru"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: MEDIUM | Risk confidence: 54.3%",
+      "reasoning": "Standard correlation group"
+    },
+    {
+      "incident_id": "INC-0006",
+      "severity": "HIGH",
+      "risk_score": 71.0,
+      "ioc_count": 1,
+      "ioc_values": [
+        "ransomware-payload-1.ru"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: HIGH | Risk confidence: 66.4%",
+      "reasoning": "Standard correlation group"
+    },
+    {
+      "incident_id": "INC-0007",
+      "severity": "HIGH",
+      "risk_score": 75.0,
+      "ioc_count": 1,
+      "ioc_values": [
+        "ransomware-payload-2.ru"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: HIGH | Risk confidence: 68.0%",
+      "reasoning": "Standard correlation group"
+    },
+    {
+      "incident_id": "INC-0008",
+      "severity": "HIGH",
+      "risk_score": 79.0,
+      "ioc_count": 1,
+      "ioc_values": [
+        "ransomware-payload-3.ru"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: HIGH | Risk confidence: 69.6%",
+      "reasoning": "Standard correlation group"
+    },
+    {
+      "incident_id": "INC-0009",
+      "severity": "HIGH",
+      "risk_score": 71.0,
+      "ioc_count": 1,
+      "ioc_values": [
+        "d41d8cd98f00b204e9800998ecf8427e"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: HIGH | Risk confidence: 66.4%",
+      "reasoning": "Standard correlation group"
+    },
+    {
+      "incident_id": "INC-0010",
+      "severity": "HIGH",
+      "risk_score": 75.0,
+      "ioc_count": 1,
+      "ioc_values": [
+        "e99a18c428cb38d5f260853678922e03"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: HIGH | Risk confidence: 68.0%",
+      "reasoning": "Standard correlation group"
+    },
+    {
+      "incident_id": "INC-0011",
+      "severity": "HIGH",
+      "risk_score": 79.0,
+      "ioc_count": 1,
+      "ioc_values": [
+        "5d41402abc4b2a76b9719d911017c592"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: HIGH | Risk confidence: 69.6%",
+      "reasoning": "Standard correlation group"
+    },
+    {
+      "incident_id": "INC-0012",
+      "severity": "LOW",
+      "risk_score": 3.0,
+      "ioc_count": 1,
+      "ioc_values": [
+        "8.8.8.8"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: LOW | Risk confidence: 8.2%",
+      "reasoning": "Standard correlation group"
+    },
+    {
+      "incident_id": "INC-0013",
+      "severity": "LOW",
+      "risk_score": 6.0,
+      "ioc_count": 1,
+      "ioc_values": [
+        "google.com"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: LOW | Risk confidence: 9.4%",
+      "reasoning": "Standard correlation group"
+    },
+    {
+      "incident_id": "INC-0014",
+      "severity": "LOW",
+      "risk_score": 4.8,
+      "ioc_count": 1,
+      "ioc_values": [
+        "cloudflare.com"
+      ],
+      "malware_family": "UNKNOWN",
+      "rules_matched": [],
+      "recommended_action": "Severity: LOW | Risk confidence: 8.9%",
+      "reasoning": "Standard correlation group"
+    }
+  ]
+}

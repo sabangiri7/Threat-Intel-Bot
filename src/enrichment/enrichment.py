@@ -31,11 +31,12 @@ load_dotenv(dotenv_path=env_file if env_file.exists() else None)
 # IMPORTS
 # ============================================================================
 
+# Always use src.cache so we share the same module (and _cache_stats) everywhere
 try:
-    from cache import get_cache, save_cache, get_cache_stats
+    from src.cache import get_cache, save_cache, get_cache_stats, cache_get, cache_set
 except ImportError:
     try:
-        from src.cache import get_cache, save_cache, get_cache_stats
+        from cache import get_cache, save_cache, get_cache_stats, cache_get, cache_set
     except ImportError as e:
         logger.error(f"Fatal import error for cache: {e}")
         sys.exit(1)
@@ -78,6 +79,8 @@ class IOCEnricher:
 
     def __init__(self):
         logger.info("Initializing IOC Enricher with 4 API handlers")
+        self._batch_cache_hits = 0
+        self._batch_cache_misses = 0
 
         self.handlers = {
             "virustotal": VirusTotalHandler(),
@@ -191,14 +194,16 @@ class IOCEnricher:
         Enrich a single IOC.
         """
         ioc_type = ioc_type.strip().lower()
-        cache = get_cache()
         cache_key = f"{ioc_type}::{ioc_value.strip()}"
 
         # Check cache first
-        if cache_key in cache:
+        cached = cache_get(cache_key)
+        if cached is not None:
+            self._batch_cache_hits += 1
             logger.info(f"💾 Cache hit: {cache_key}")
-            return cache[cache_key]
+            return cached
 
+        self._batch_cache_misses += 1
         logger.info(f"🔍 Enriching IOC: {ioc_value} ({ioc_type})")
 
         api_results = {}
@@ -230,7 +235,7 @@ class IOCEnricher:
             "timestamp": datetime.now(timezone.utc).isoformat()
         }
 
-        cache[cache_key] = enriched
+        cache_set(cache_key, enriched)
 
         if random.random() < 0.1:
             save_cache()
@@ -248,6 +253,8 @@ class IOCEnricher:
         """
         Enrich multiple IOCs.
         """
+        self._batch_cache_hits = 0
+        self._batch_cache_misses = 0
         logger.info(f"📦 Starting batch enrichment: {len(iocs)} IOCs")
         results = []
 
@@ -279,5 +286,15 @@ class IOCEnricher:
     # ----------------------------------------------------------------------
 
     def get_cache_stats(self) -> Dict:
-        """Get cache statistics"""
+        """Get cache statistics (global module stats)."""
         return get_cache_stats()
+
+    def get_batch_cache_stats(self) -> Dict:
+        """Get cache hit/miss stats for the most recent batch. Reliable across imports."""
+        total = self._batch_cache_hits + self._batch_cache_misses
+        hit_rate = (self._batch_cache_hits / total * 100) if total > 0 else 0.0
+        return {
+            "hits": self._batch_cache_hits,
+            "misses": self._batch_cache_misses,
+            "hit_rate": round(hit_rate, 1),
+        }

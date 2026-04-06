@@ -1,0 +1,49 @@
+<!--
+  FYP Threat Intel Bot — custom Wazuh rules (lab / demonstration only).
+
+  Install on Wazuh manager:
+    Copy to /var/ossec/etc/rules/local_rules.xml (or merge into your ruleset)
+    Ensure <local_rules> in ossec.conf includes this file, then restart wazuh-manager.
+
+  Log format: one JSON object per line from scripts/generate_wazuh_logs.py
+  Decoder: built-in JSON decoder (decoded_as json).
+
+  LAB-ONLY: Not for production deployment without review.
+-->
+<group name="fyp_intel,threat_intelligence,mitre,">
+
+  <!-- Base: any intel line from this project -->
+  <rule id="100100" level="10">
+    <decoded_as>json</decoded_as>
+    <field name="source">FYP-ThreatIntelBot</field>
+    <description>FYP Threat Intel: Bot detected a threat.</description>
+  </rule>
+
+  <!-- High / critical severity (OR via pcre2 on field; if unsupported, split into two rules for CRITICAL and HIGH) -->
+  <rule id="100101" level="12">
+    <if_sid>100100</if_sid>
+    <field name="severity" type="pcre2">^(CRITICAL|HIGH)$</field>
+    <description>FYP Threat Intel: High/Critical severity incident detected.</description>
+    <mitre>
+      <id>T1071</id>
+    </mitre>
+  </rule>
+
+  <!-- Emotet family -->
+  <rule id="100102" level="11">
+    <if_sid>100100</if_sid>
+    <field name="malware_family">Emotet</field>
+    <description>FYP Threat Intel: Emotet malware family detected.</description>
+    <mitre>
+      <id>T1566</id>
+    </mitre>
+  </rule>
+
+  <!-- BLOCK triage -->
+  <rule id="100103" level="12">
+    <if_sid>100100</if_sid>
+    <field name="triage_action">BLOCK</field>
+    <description>FYP Threat Intel: Immediate BLOCK action recommended.</description>
+  </rule>
+
+</group>

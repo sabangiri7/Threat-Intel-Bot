@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "description": "Curated 60-IOC dataset for Automated Threat Intelligence Bot",
+    "ioc_counts": {
+      "ip": 15,
+      "domain": 20,
+      "hash": 15,
+      "url": 10
+    },
+    "malware_families": [
+      "Emotet",
+      "Mirai",
+      "Cobalt Strike",
+      "TrickBot",
+      "QakBot",
+      "AgentTesla",
+      "Formbook",
+      "Remcos"
+    ]
+  },
+  "iocs": [
+    {
+      "ioc_value": "192.0.2.15",
+      "ioc_type": "ip",
+      "description": "Cobalt Strike C2 Server"
+    },
+    {
+      "ioc_value": "198.51.100.42",
+      "ioc_type": "ip",
+      "description": "Cobalt Strike Team Server"
+    },
+    {
+      "ioc_value": "203.0.113.88",
+      "ioc_type": "ip",
+      "description": "Cobalt Strike Stager"
+    },
+    {
+      "ioc_value": "192.0.2.201",
+      "ioc_type": "ip",
+      "description": "Mirai Botnet Node"
+    },
+    {
+      "ioc_value": "198.51.100.101",
+      "ioc_type": "ip",
+      "description": "Mirai Scanner"
+    },
+    {
+      "ioc_value": "203.0.113.102",
+      "ioc_type": "ip",
+      "description": "Mirai C2"
+    },
+    {
+      "ioc_value": "185.199.108.10",
+      "ioc_type": "ip",
+      "description": "Emotet Epoch 4 Tier 1"
+    },
+    {
+      "ioc_value": "185.199.109.11",
+      "ioc_type": "ip",
+      "description": "Emotet Epoch 4 Tier 2"
+    },
+    {
+      "ioc_value": "185.199.110.12",
+      "ioc_type": "ip",
+      "description": "Emotet Payload Host"
+    },
+    {
+      "ioc_value": "203.0.113.200",
+      "ioc_type": "ip",
+      "description": "TrickBot Inject Server"
+    },
+    {
+      "ioc_value": "203.0.113.201",
+      "ioc_type": "ip",
+      "description": "TrickBot C2"
+    },
+    {
+      "ioc_value": "198.51.100.55",
+      "ioc_type": "ip",
+      "description": "QakBot Proxy"
+    },
+    {
+      "ioc_value": "198.51.100.56",
+      "ioc_type": "ip",
+      "description": "QakBot C2"
+    },
+    {
+      "ioc_value": "8.8.8.8",
+      "ioc_type": "ip",
+      "description": "Benign - Google DNS"
+    },
+    {
+      "ioc_value": "1.1.1.1",
+      "ioc_type": "ip",
+      "description": "Benign - Cloudflare DNS"
+    },
+    {
+      "ioc_value": "update.windows-services-host.com",
+      "ioc_type": "domain",
+      "description": "Cobalt Strike beacon domain"
+    },
+    {
+      "ioc_value": "cdn.telemetry-tracker.net",
+      "ioc_type": "domain",
+      "description": "Cobalt Strike C2 domain"
+    },
+    {
+      "ioc_value": "api.cloud-metrics-sync.org",
+      "ioc_type": "domain",
+      "description": "Cobalt Strike staging"
+    },
+    {
+      "ioc_value": "login.microsoft-auth-verify.com",
+      "ioc_type": "domain",
+      "description": "Cobalt Strike phishing"
+    },
+    {
+      "ioc_value": "invoice-document-download.com",
+      "ioc_type": "domain",
+      "description": "Emotet delivery"
+    },
+    {
+      "ioc_value": "payment-receipt-online.net",
+      "ioc_type": "domain",
+      "description": "Emotet delivery"
+    },
+    {
+      "ioc_value": "shipping-details-dhl.org",
+      "ioc_type": "domain",
+      "description": "Emotet delivery"
+    },
+    {
+      "ioc_value": "tax-statement-2026.com",
+      "ioc_type": "domain",
+      "description": "Emotet delivery"
+    },
+    {
+      "ioc_value": "hr-payroll-docs.net",
+      "ioc_type": "domain",
+      "description": "Emotet payload"
+    },
+    {
+      "ioc_value": "secure-bank-login-portal.com",
+      "ioc_type": "domain",
+      "description": "TrickBot target"
+    },
+    {
+      "ioc_value": "account-verify-update.org",
+      "ioc_type": "domain",
+      "description": "TrickBot inject"
+    },
+    {
+      "ioc_value": "sys-update-check.net",
+      "ioc_type": "domain",
+      "description": "TrickBot C2"
+    },
+    {
+      "ioc_value": "plugin-service-host.com",
+      "ioc_type": "domain",
+      "description": "TrickBot proxy"
+    },
+    {
+      "ioc_value": "mail-server-config.com",
+      "ioc_type": "domain",
+      "description": "AgentTesla exfil"
+    },
+    {
+      "ioc_value": "ftp-sync-host.net",
+      "ioc_type": "domain",
+      "description": "AgentTesla exfil"
+    },
+    {
+      "ioc_value": "smtp-relay-secure.org",
+      "ioc_type": "domain",
+      "description": "AgentTesla C2"
+    },
+    {
+      "ioc_value": "google.com",
+      "ioc_type": "domain",
+      "description": "Benign"
+    },
+    {
+      "ioc_value": "microsoft.com",
+      "ioc_type": "domain",
+      "description": "Benign"
+    },
+    {
+      "ioc_value": "github.com",
+      "ioc_type": "domain",
+      "description": "Benign"
+    },
+    {
+      "ioc_value": "apple.com",
+      "ioc_type": "domain",
+      "description": "Benign"
+    },
+    {
+      "ioc_value": "44d88612fea8a8f36de82e1278abb02f",
+      "ioc_type": "hash",
+      "description": "Formbook MD5"
+    },
+    {
+      "ioc_value": "55e99723gfb9b9g47ef93f2389bcc13g",
+      "ioc_type": "hash",
+      "description": "Formbook MD5"
+    },
+    {
+      "ioc_value": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ioc_type": "hash",
+      "description": "Formbook SHA256"
+    },
+    {
+      "ioc_value": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "ioc_type": "hash",
+      "description": "Formbook SHA256"
+    },
+    {
+      "ioc_value": "11a88612fea8a8f36de82e1278abb02f",
+      "ioc_type": "hash",
+      "description": "Remcos MD5"
+    },
+    {
+      "ioc_value": "22e99723gfb9b9g47ef93f2389bcc13g",
+      "ioc_type": "hash",
+      "description": "Remcos MD5"
+    },
+    {
+      "ioc_value": "33b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ioc_type": "hash",
+      "description": "Remcos SHA256"
+    },
+    {
+      "ioc_value": "44969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+      "ioc_type": "hash",
+      "description": "Remcos SHA256"
+    },
+    {
+      "ioc_value": "55a88612fea8a8f36de82e1278abb02f",
+      "ioc_type": "hash",
+      "description": "AgentTesla MD5"
+    },
+    {
+      "ioc_value": "66e99723gfb9b9g47ef93f2389bcc13g",
+      "ioc_type": "hash",
+      "description": "AgentTesla MD5"
+    },
+    {
+      "ioc_value": "77b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ioc_type": "hash",
+      "description": "AgentTesla SHA256"
+    },
+    {
+      "ioc_value": "88a88612fea8a8f36de82e1278abb02f",
+      "ioc_type": "hash",
+      "description": "Mirai ARM ELF"
+    },
+    {
+      "ioc_value": "99e99723gfb9b9g47ef93f2389bcc13g",
+      "ioc_type": "hash",
+      "description": "Mirai x86 ELF"
+    },
+    {
+      "ioc_value": "d41d8cd98f00b204e9800998ecf8427e",
+      "ioc_type": "hash",
+      "description": "Benign empty file MD5"
+    },
+    {
+      "ioc_value": "0000000000000000000000000000000000000000000000000000000000000000",
+      "ioc_type": "hash",
+      "description": "Benign zero hash"
+    },
+    {
+      "ioc_value": "http://invoice-document-download.com/payload.exe",
+      "ioc_type": "url",
+      "description": "Emotet payload delivery"
+    },
+    {
+      "ioc_value": "https://payment-receipt-online.net/invoice.doc",
+      "ioc_type": "url",
+      "description": "Emotet document"
+    },
+    {
+      "ioc_value": "http://shipping-details-dhl.org/track.zip",
+      "ioc_type": "url",
+      "description": "Emotet zip"
+    },
+    {
+      "ioc_value": "http://198.51.100.55/config.bin",
+      "ioc_type": "url",
+      "description": "QakBot config"
+    },
+    {
+      "ioc_value": "https://198.51.100.56/update.dll",
+      "ioc_type": "url",
+      "description": "QakBot DLL"
+    },
+    {
+      "ioc_value": "http://198.51.100.55/auth.php",
+      "ioc_type": "url",
+      "description": "QakBot C2 panel"
+    },
+    {
+      "ioc_value": "https://update.windows-services-host.com/jquery-3.3.1.min.js",
+      "ioc_type": "url",
+      "description": "Cobalt Strike beacon"
+    },
+    {
+      "ioc_value": "http://192.0.2.15/submit.php?id=8842",
+      "ioc_type": "url",
+      "description": "Cobalt Strike C2"
+    },
+    {
+      "ioc_value": "https://www.google.com/search?q=cybersecurity",
+      "ioc_type": "url",
+      "description": "Benign URL"
+    },
+    {
+      "ioc_value": "https://github.com/about",
+      "ioc_type": "url",
+      "description": "Benign URL"
+    }
+  ]
+}

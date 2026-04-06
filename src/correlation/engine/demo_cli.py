@@ -2,6 +2,10 @@
 """
 CLI Demo Script - Threat Intelligence Bot Phase 3.1
 End-to-end demonstration of correlation engine
+
+Run from project root (either form works):
+    python -m src.correlation.engine.demo_cli --iocs 20
+    python src/correlation/engine/demo_cli.py --iocs 20
 """
 
 import sys
@@ -11,6 +15,12 @@ import argparse
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict
+
+# Running this file directly (python src/correlation/engine/demo_cli.py) puts `engine/`
+# on sys.path first, so `import src...` fails unless the project root is added.
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
 
 # Configure logging
 logging.basicConfig(
@@ -163,8 +173,11 @@ class CorrelationDemo:
             logger.info("Imported correlation engine from src.correlation.engine")
         except ImportError:
             try:
-                from correlation.engine import correlate_iocs
-                logger.info("Imported correlation engine from correlation.engine")
+                _src = _PROJECT_ROOT / "src"
+                if str(_src) not in sys.path:
+                    sys.path.insert(0, str(_src))
+                from correlation.engine.engine import correlate_iocs
+                logger.info("Imported correlation engine from correlation.engine.engine")
             except ImportError:
                 logger.error("Could not import correlation engine")
                 sys.exit(1)
@@ -180,14 +193,14 @@ class CorrelationDemo:
             output_file: Optional file to save results
         """
         print("\n" + "="*80)
-        print("🔍 THREAT INTELLIGENCE BOT - CORRELATION ENGINE DEMO")
+        print("THREAT INTELLIGENCE BOT - CORRELATION ENGINE DEMO")
         print("="*80)
         print(f"Phase 3.1 - Week 6 (January 7-13, 2026)")
         print(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         print("="*80 + "\n")
         
         # Step 1: Generate sample data
-        print("📊 STEP 1: Generate Sample IOCs")
+        print("STEP 1: Generate Sample IOCs")
         print("-" * 80)
         generator = DemoDataGenerator()
         iocs = generator.generate_sample_iocs(num_iocs)
@@ -197,14 +210,14 @@ class CorrelationDemo:
             ioc_type = ioc['ioctype']
             ioc_types[ioc_type] = ioc_types.get(ioc_type, 0) + 1
         
-        print(f"✓ Generated {len(iocs)} IOCs\n")
+        print(f"Generated {len(iocs)} IOCs\n")
         print("  IOC Type Breakdown:")
         for ioc_type, count in sorted(ioc_types.items()):
             print(f"    - {ioc_type}: {count}")
         print()
         
         # Step 2: Run correlation
-        print("\n📈 STEP 2: Run Correlation Engine")
+        print("\nSTEP 2: Run Correlation Engine")
         print("-" * 80)
         try:
             incidents = self.correlate_iocs(iocs)
@@ -215,10 +228,10 @@ class CorrelationDemo:
                 traceback.print_exc()
             sys.exit(1)
         
-        print(f"✓ Generated {len(incidents)} incident groups\n")
+        print(f"Generated {len(incidents)} incident groups\n")
         
         # Step 3: Incident-level recommendations (Phase 4 decision engine)
-        print("\n✅ STEP 3: Incident Recommendations")
+        print("\nSTEP 3: Incident Recommendations")
         print("-" * 80)
         try:
             from src.decision import TriageEngine, RecommendationSummary
@@ -232,14 +245,14 @@ class CorrelationDemo:
             summary = {}
         
         # Step 4: Display incident groups
-        print("\n🎯 STEP 4: Incident Groups")
+        print("\nSTEP 4: Incident Groups")
         print("-" * 80)
         
         for incident in incidents:
             self._print_incident(incident)
         
         # Step 5: Summary statistics
-        print("\n📊 STEP 5: Summary Statistics")
+        print("\nSTEP 5: Summary Statistics")
         print("-" * 80)
         self._print_summary(iocs, incidents)
         
@@ -248,7 +261,7 @@ class CorrelationDemo:
             self._save_results(incidents, output_file, decisions, summary)
         
         print("\n" + "="*80)
-        print("✅ DEMO COMPLETE")
+        print("DEMO COMPLETE")
         print("="*80 + "\n")
     
     @staticmethod
@@ -262,7 +275,7 @@ class CorrelationDemo:
         families = ', '.join(incident['malware_families'])
         
         print(f"\n  {inc_id} | Severity: {severity:8} | Score: {final_score:6.1f}")
-        print(f"  {'─' * 76}")
+        print(f"  {'-' * 76}")
         print(f"  IOCs in group:     {group_size}")
         print(f"  Malware families:  {families}")
         print(f"  IOC types:         {', '.join(incident['ioc_types'])}")
@@ -286,7 +299,7 @@ class CorrelationDemo:
             print("  No recommendations (no incidents).")
             return
         print(f"  BLOCK: {summary.get('block_count', 0)}  |  QUARANTINE: {summary.get('quarantine_count', 0)}  |  MONITOR: {summary.get('monitor_count', 0)}  |  IGNORE: {summary.get('ignore_count', 0)}")
-        print(f"  ⚡ Immediate action required: {summary.get('immediate_action_required', 0)} incidents\n")
+        print(f"  Immediate action required: {summary.get('immediate_action_required', 0)} incidents\n")
         for d in decisions[:10]:
             print(f"    {d.incident_id}: {d.recommendation} (confidence: {d.confidence:.1f}%)")
         if len(decisions) > 10:
@@ -335,7 +348,7 @@ class CorrelationDemo:
             }
             with open(output_path, 'w') as f:
                 json.dump(payload, f, indent=2, default=str)
-            print(f"\n✓ Results saved to: {output_file} (incidents + recommendations)")
+            print(f"\nResults saved to: {output_file} (incidents + recommendations)")
         except Exception as e:
             logger.error(f"Failed to save results: {e}")
 
