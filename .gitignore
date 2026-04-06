@@ -49,3 +49,10 @@ REPO_*.txt
 
 # Streamlit Artifacts
 .streamlit/
+# Exclude planning and thesis documents
+CHANGELOG.md
+FULL_PROJECT_COMPREHENSIVE_OVERVIEW.md
+LIMITATIONS.md
+PLATFORM_JSON_SCHEMA.md
+WAZUH_INTEGRATION.md
+*.docx
